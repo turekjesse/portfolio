@@ -11,7 +11,6 @@ const MobileNav = () => {
           <Menu.Item as={Link} to="/projects" name="projects" />
           <Menu.Item as={Link} to="/experience" name="experience" />
           <Menu.Item as={Link} to="/hobbies" name="hobbies" />
-
         </Dropdown.Menu>
       </Dropdown>
     </Menu>
