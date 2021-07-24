@@ -87,12 +87,12 @@ a:hover {
   width: 3em;
 }
 
-.icon-container {
-  padding: 1rem 1.25rem;
-}
-
 .icons {
   font-size: 2rem;
+}
+
+.icon-container {
+  padding: 1rem 1.25rem;
 }
 
 .icons:hover {
@@ -179,7 +179,6 @@ img {
   color:#222222;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  border: 1px solid #979797;
   justify-content: center;
   margin: 0;
 }
@@ -189,7 +188,6 @@ img {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding:1.25rem 1rem;
-  border: 1px solid #979797;
   justify-content:space-between;
   align-items: center;
   min-height: 60vh;
@@ -236,6 +234,10 @@ img {
     font-size: calc(1em + (1.5 - 1) * ((100vw - 21em) / (35 - 21))); 
   } */
 
+  .icon-container {
+    padding: 1rem 3.2rem;
+  }
+
   .projects {
     flex-direction: row;  
     gap: 20px;
@@ -260,7 +262,7 @@ img {
 
   header > div.connect-container {
     display:flex;
-    margin-right: 1.25rem;
+    margin-right: 3rem;
     font-size: 1rem;
   }
 
@@ -282,13 +284,6 @@ img {
 
    .about-container {
     justify-content: space-around;
-    /* flex-wrap: wrap; */
-  }
-
-  img {
-    width:40%;
-    height:10%;
-    align-self: top; 
   }
 
   footer {
