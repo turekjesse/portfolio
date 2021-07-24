@@ -35,7 +35,11 @@ function App() {
     {
        width < breakpoint ? <MobileNav /> : <DesktopNav />
     }
-    <Home/>
+    <Route path="/" exact component={Home}/>
+    <Route path="/about" exact component={About}/>
+    <Route path="/projects" exact component={Projects}/>
+    <Route path="/experience" exact component={Experience}/>
+    <Route path="/hobbies" exact component={Hobbies}/>
     </>
   );
 }
