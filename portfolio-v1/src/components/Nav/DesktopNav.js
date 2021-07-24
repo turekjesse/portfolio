@@ -1,30 +1,31 @@
 import { Menu } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 const DesktopNav = () => {
     return (
-        <Menu fluid widths={12} inverted>
+        <Menu fluid widths={10} inverted>
           <Menu.Item
             name='home'
-            link
+            as={Link}
             to="/"
           />
           <Menu.Item
-          link
+          as={Link}
           to="/about"
             name='about'
           />
           <Menu.Item
-          link
+          as={Link}
           to="/projects"
             name='projects'
           />
           <Menu.Item
-          link
+          as={Link}
           to="/experience"
             name='experience'
           />
           <Menu.Item
-          link
+          as={Link}
           to="/hobbies"
             name='hobbies'
           />
