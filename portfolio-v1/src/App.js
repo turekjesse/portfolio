@@ -1,18 +1,19 @@
+import { useState } from 'react'
+import { Route } from 'react-router-dom'
 import './App.css';
-import Nav from './components/Nav/Nav'
-import { createTheme, ThemeProvider } from '@material-ui/core/styles'
 
-const theme = createTheme({
-  pallete: {
-    type: 'dark'
-  }
-})
+import DesktopNav from './components/Nav/DesktopNav';
+import MobileNav from './components/Nav/MobileNav';
+import Home from './components/Home/Home';
 
 function App() {
+
   return (
-    <ThemeProvider theme={theme}>
-      <Nav theme={theme}/>
-    </ThemeProvider>
+    <>
+    <DesktopNav/>
+    <MobileNav/>
+    <Home/>
+    </>
   );
 }
 
