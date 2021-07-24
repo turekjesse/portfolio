@@ -1,28 +1,41 @@
-import { Segment,Image, Header, Reveal, Card, Grid, Container } from "semantic-ui-react";
+import { Segment, Header, Reveal, Grid, Container } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <>
-      <Grid centered inverted columns='equal'>
-
-
-        <Grid.Row padded>
+      <Grid celled="internally" centered inverted columns="equal">
+        <Grid.Row>
           <Grid.Column>
-            <Container className="grid-container about" fluid>
-            </Container>
+            <Link to="/about">
+              <Reveal animated="fade">
+                <Reveal.Content visible>
+                  <div className="about-visible">
+                    <h1>About</h1>
+                  </div>
+                </Reveal.Content>
+                <Reveal.Content hidden>
+                  <Container className=" about-hidden" fluid />
+                </Reveal.Content>
+              </Reveal>
+            </Link>
           </Grid.Column>
         </Grid.Row>
 
         <Grid.Row columns="equal">
-          <Grid.Column  mobile={16} computer={8}>
-          <Container className="grid-container projects" fluid>
-            </Container>
+          <Grid.Column mobile={16} computer={8}>
+            <Reveal>
+                <Reveal.Content>
+                    <Container className=" projects" fluid></Container>
+                </Reveal.Content>
+                <Reveal.Content>
+                    <Container className=" projects" fluid></Container>
+                </Reveal.Content>
+            </Reveal>
           </Grid.Column>
           <Grid.Column mobile={16} computer={8}>
-          <Container className="grid-container experience" fluid>
-            </Container>
+            <Container className=" experience" fluid></Container>
           </Grid.Column>
-
         </Grid.Row>
         <Grid.Row columns="equal">
           <Grid.Column>
@@ -33,24 +46,19 @@ const Home = () => {
         </Grid.Row>
 
         <Grid.Row columns="equal">
-        <Grid.Column mobile={8} computer={4}>
-          <Container className="grid-container woodworking" fluid>
-            </Container>
+          <Grid.Column mobile={8} computer={4}>
+            <Container className=" woodworking" fluid></Container>
           </Grid.Column>
           <Grid.Column mobile={8} computer={4}>
-          <Container className="grid-container cycling" fluid>
-            </Container>
+            <Container className=" cycling" fluid></Container>
           </Grid.Column>
           <Grid.Column mobile={8} computer={4}>
-          <Container className="grid-container hiking" fluid>
-            </Container>
+            <Container className=" hiking" fluid></Container>
           </Grid.Column>
           <Grid.Column mobile={8} computer={4}>
-          <Container className="grid-container surfing" fluid>
-            </Container>
+            <Container className=" surfing" fluid></Container>
           </Grid.Column>
         </Grid.Row>
-
       </Grid>
     </>
   );
