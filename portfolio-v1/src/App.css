@@ -5,6 +5,7 @@ body {
 
 .menu{
   height:50px;
+  margin-bottom:0 !important;
 }
 
 .ui.menu .dropdown.item .menu {
@@ -13,4 +14,76 @@ body {
 
 .ui.menu .ui.dropdown .menu>.item {
   color:white !important;
+}
+
+.ui.container {
+  margin:0 !important;
+}
+
+.about {
+  height:50vh;
+  background-image: url('https://i.imgur.com/9l1PKOx.jpg');
+  background-position: 10% 21%;
+  background-origin: content-box;
+  background-size: cover;
+}
+
+.projects{
+  height:40vh;
+  background-image: url('https://i.imgur.com/qTs3uOf.png');
+  background-position: top;
+  background-origin: content-box;
+  background-size: cover;
+}
+
+.experience{
+  height:40vh;
+  background-image: url('https://i.imgur.com/ddJmNUy.png');
+  background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+}
+
+.woodworking {
+  height:45vh;
+  background-image: url('https://64.media.tumblr.com/565f0c1658891080bb347852608bb967/tumblr_ngynpe0I1J1sdomyio1_1280.jpg');
+  background-position: top;
+  background-origin: content-box;
+  background-size: cover;
+}
+
+.surfing{
+  height:45vh;
+  background-image: url('https://i.shgcdn.com/5773e59d-448f-4fb1-bdd3-64910630f3f8/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+  background-position: 25% 20%;
+  background-origin: content-box;
+  background-size: 150%;
+}
+
+.cycling{
+  height:45vh;
+  background-image: url('https://i.imgur.com/aefwZQF.jpg');
+  background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+}
+
+.hiking{
+  height:45vh;
+  background-image: url('https://i.imgur.com/NgQQ7dMh.jpg');
+  background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+}
+
+.row{
+  padding:0 !important;
+}
+
+.column{
+  padding:0 !important;
+}
+
+.grid {
+  margin:0 !important;
 }
