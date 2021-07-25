@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
-      <Grid celled="internally" centered inverted columns="equal">
+      <Grid centered inverted columns="equal">
         <Grid.Row>
           <Grid.Column>
             <Link to="/about">
@@ -23,29 +23,46 @@ const Home = () => {
         </Grid.Row>
 
         <Grid.Row columns="equal">
-          <Grid.Column mobile={16} computer={8}>
-            <Reveal>
-                <Reveal.Content>
-                    <Container className=" projects" fluid></Container>
-                </Reveal.Content>
-                <Reveal.Content>
-                    <Container className=" projects" fluid></Container>
-                </Reveal.Content>
-            </Reveal>
+          <Grid.Column >
+            <Link to="/projects">
+                <Reveal animated="fade">
+                    <Reveal.Content visible>
+                        <div className="projects-visible">
+                            <h1>Projects</h1>
+                        </div>
+                    </Reveal.Content>
+                    <Reveal.Content hidden>
+                        <Container className="projects-hidden" fluid></Container>
+                    </Reveal.Content>
+                </Reveal>
+            </Link>
           </Grid.Column>
-          <Grid.Column mobile={16} computer={8}>
-            <Container className=" experience" fluid></Container>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row columns="equal">
-          <Grid.Column>
-            <Segment padded inverted textAlign="center">
-              <Header>Hobbies</Header>
-            </Segment>
+          <Grid.Column >
+          <Link to="/experience">
+                <Reveal animated="fade">
+                    <Reveal.Content visible>
+                        <div className="projects-visible">
+                            <h1>Experience</h1>
+                        </div>
+                    </Reveal.Content>
+                    <Reveal.Content hidden>
+                        <Container className="experience-hidden" fluid></Container>
+                    </Reveal.Content>
+                </Reveal>
+            </Link>
           </Grid.Column>
         </Grid.Row>
 
         <Grid.Row columns="equal">
+        <Link to="/hobbies">
+              <Reveal animated="fade">
+                <Reveal.Content visible>
+                  <div className="hobbies-visible">
+                    <h1>Hobbies</h1>
+                  </div>
+                </Reveal.Content>
+              </Reveal>
+            </Link>
           <Grid.Column mobile={8} computer={4}>
             <Container className=" woodworking" fluid></Container>
           </Grid.Column>
