@@ -6,6 +6,7 @@ body {
 .menu{
   height:50px;
   margin-bottom:0 !important;
+  border-bottom: 1px solid rgba(255,255,255,.08) !important;
 }
 
 .ui.menu .dropdown.item .menu {
@@ -20,28 +21,76 @@ body {
   margin:0 !important;
 }
 
-.about {
-  height:50vh;
+.about-visible {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  height:70vh;
+  color:white;
+  width:100vw;
+  background-color:rgb(27,28,29, 90%);
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.about-hidden {
+  height:70vh;
   background-image: url('https://i.imgur.com/9l1PKOx.jpg');
   background-position: 10% 21%;
   background-origin: content-box;
   background-size: cover;
 }
 
-.projects{
-  height:40vh;
+.projects-visible {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  height:50vh;
+  color:white;
+  width:50vw;
+  background-color:rgb(27,28,29, 90%);
+  border-bottom: 1px solid rgba(255,255,255,.2);
+  border-right: 1px solid rgba(255,255,255,.2);
+}
+
+.projects-hidden{
+  height:50vh;
+  width:50vw;
   background-image: url('https://i.imgur.com/qTs3uOf.png');
   background-position: top;
   background-origin: content-box;
   background-size: cover;
 }
 
-.experience{
-  height:40vh;
+.experience-visible {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  height:50vh;
+  color:white;
+  width:50vw;
+  background-color:rgb(27,28,29, 90%);
+}
+
+.experience-hidden {
+  height:50vh;
   background-image: url('https://i.imgur.com/ddJmNUy.png');
   background-position: center;
   background-origin: content-box;
   background-size: cover;
+}
+
+.hobbies-visible {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  height:45vh;
+  color:white;
+  width:100vw;
+  background-color:rgb(27,28,29, 90%);
 }
 
 .woodworking {
@@ -86,4 +135,8 @@ body {
 
 .grid {
   margin:0 !important;
+}
+
+@media screen and (min-width: 720px){
+  
 }
