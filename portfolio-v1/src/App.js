@@ -20,13 +20,13 @@ function App() {
     }
   
     const killWindowResize = () => {
-      window.removeEventListener('resize', handleWindowResize)
+      return () => window.removeEventListener('resize', handleWindowResize)
     } 
   
     useEffect(() => {
       handleWindowResize()
       killWindowResize()
-    })
+    },[])
 
     return { width };
   }
