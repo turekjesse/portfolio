@@ -1,6 +1,6 @@
 import MobileNav from "../Nav/MobileNav";
 import DesktopNav from "../Nav/DesktopNav";
-import { Grid, Image, Segment, Icon, Button } from "semantic-ui-react";
+import { Grid, Image, Segment, Icon, Button, Header } from "semantic-ui-react";
 import GA_Logo from "../../assets/GA_Logo.png";
 import carhartt_wip_text_logo from "../../assets/carhartt_wip_text_logo.svg";
 import Unis from "../../assets/Unis.png";
@@ -20,7 +20,7 @@ const Experience = ({ useViewPortWidth, breakpoint }) => {
     {
       company: "Carhartt WIP",
       title: "Content Manager",
-      timeline: "3/2018 - 5/2021",
+      timeline: "3 / 2018 - 5 / 2021",
       image: `${carhartt_wip_text_logo}`,
       description:
         "Managed product data for 1000+ SKUs per season. Executed weekly site-wide content updates to align with sales-performance and marketing initiatives. Arranged and built biweekly newsletter campaigns utilizing Sketch and Mailchimp ESP. Coordinated feature deployments with external dev team.",
@@ -50,6 +50,10 @@ const Experience = ({ useViewPortWidth, breakpoint }) => {
   return (
     <>
       {width < breakpoint ? <MobileNav /> : <DesktopNav />}
+      <Segment className="no-margin" inverted>
+      <Header className="no-margin" textAlign='center' inverted as="h2" dividing>
+        Experience 
+      </Header>
       <Segment className="no-margin btn-segment" textAlign="center" inverted>
         <Button
           as="a"
@@ -64,7 +68,6 @@ const Experience = ({ useViewPortWidth, breakpoint }) => {
           <Icon name="download" />
         </Button>
       </Segment>
-      <Segment className="no-margin" inverted>
         <Grid centered columns="equal" relaxed="very">
           {experience.map((job, idx) => {
             if (idx < 2) {
