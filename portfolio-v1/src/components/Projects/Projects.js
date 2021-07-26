@@ -1,6 +1,6 @@
 import MobileNav from "../Nav/MobileNav";
 import DesktopNav from "../Nav/DesktopNav";
-import { Grid, Image, Segment, Icon, Button, Header } from "semantic-ui-react";
+import { Grid, Image, Segment, Button, Header } from "semantic-ui-react";
 import whack_a_moji from "../../assets/whack_a_moji.png";
 import spacecadet from "../../assets/spacecadet.png";
 import easternmanner from "../../assets/easternmanner.png";
