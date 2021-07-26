@@ -26,6 +26,7 @@ function App() {
     useEffect(() => {
       handleWindowResize()
       killWindowResize()
+      //eslint-disable-next-line
     },[])
 
     return { width };
