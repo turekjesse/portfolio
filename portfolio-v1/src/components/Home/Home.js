@@ -1,7 +1,16 @@
-import { Segment, Header, Reveal, Grid, Container } from "semantic-ui-react";
+import { Reveal, Grid, Container } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+
+    // const mobileBorder = {
+    //     borderBottom: "1px solid rgba(255,255,255,.2)",
+    //   };
+    
+    //   const desktopBorder = {
+    //     borderRight: "1px solid rgba(255,255,255,.2)",
+    //   };
+      
   return (
     <>
       <Grid centered inverted columns="equal">
@@ -23,7 +32,7 @@ const Home = () => {
         </Grid.Row>
 
         <Grid.Row columns="equal">
-          <Grid.Column >
+          <Grid.Column mobile={16} computer={8}>
             <Link to="/projects">
                 <Reveal animated="fade">
                     <Reveal.Content visible>
@@ -37,11 +46,11 @@ const Home = () => {
                 </Reveal>
             </Link>
           </Grid.Column>
-          <Grid.Column >
+          <Grid.Column mobile={16} computer={8} >
           <Link to="/experience">
                 <Reveal animated="fade">
                     <Reveal.Content visible>
-                        <div className="projects-visible">
+                        <div className="experience-visible">
                             <h1>Experience</h1>
                         </div>
                     </Reveal.Content>

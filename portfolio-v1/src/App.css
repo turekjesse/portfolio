@@ -40,7 +40,7 @@ body {
 .about-hidden {
   height:70vh;
   background-image: url('https://i.imgur.com/9l1PKOx.jpg');
-  background-position: 10% 21%;
+  background-position: center;
   background-origin: content-box;
   background-size: cover;
 }
@@ -52,7 +52,7 @@ body {
   align-items:center;
   height:50vh;
   color:white;
-  width:50vw;
+  width:100vw;
   background-color:rgb(27,28,29, 90%);
   border-bottom: 1px solid rgba(255,255,255,.2);
   border-right: 1px solid rgba(255,255,255,.2);
@@ -62,9 +62,9 @@ body {
   height:50vh;
   width:50vw;
   background-image: url('https://i.imgur.com/qTs3uOf.png');
-  background-position: top;
+  background-position: top-left;
   background-origin: content-box;
-  background-size: cover;
+  background-size: 200%;
 }
 
 .experience-visible {
@@ -74,8 +74,9 @@ body {
   align-items:center;
   height:50vh;
   color:white;
-  width:50vw;
+  width:100vw;
   background-color:rgb(27,28,29, 90%);
+  border-bottom: 1px solid rgba(255,255,255,.2);
 }
 
 .experience-hidden {
@@ -107,8 +108,8 @@ body {
 
 .surfing {
   height:45vh;
-  background-image: url('https://i.shgcdn.com/5773e59d-448f-4fb1-bdd3-64910630f3f8/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
-  background-position: 25% 20%;
+  background-image: url('https://i.imgur.com/Bt5Qmdk.png');
+  background-position: center;
   background-origin: content-box;
   background-size: 150%;
 }
@@ -157,6 +158,25 @@ small {
 }
 
 @media screen and (min-width: 720px){
+
+  .about-hidden {
+    background-position: 10% 21%;
+  }
+
+  .projects-visible {
+    width:50vw;
+  }
+
+  .projects-hidden {
+    background-image: url('https://i.imgur.com/qTs3uOf.png');
+    background-position: top;
+    background-origin: content-box;
+    background-size: cover;
+  }
+
+  .experience-visible {
+    width:50vw;
+  }
 
   .btn-segment{
     margin-bottom:0 !important;
