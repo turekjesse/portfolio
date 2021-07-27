@@ -60,7 +60,7 @@ const Projects = ({ useViewPortWidth, breakpoint }) => {
                   mobile={16}
                   computer={5}
                 >
-                  <Segment textAlign="center" className="no-margin" inverted>
+                  <Segment textAlign="center" className="no-margin project-segment" inverted>
                     <Image size="large" centered fluid src={project.image} />
                     <h3>{project.title}</h3>
                     <p>{project.body}</p>
@@ -77,7 +77,7 @@ const Projects = ({ useViewPortWidth, breakpoint }) => {
             } else {
               return (
                 <Grid.Column className="job-segment" mobile={16} computer={5}>
-                  <Segment textAlign="center" className="no-margin" inverted>
+                  <Segment textAlign="center" className="no-margin project-segment" inverted>
                     <Image size="large" centered fluid src={project.image} />
                     <h3>{project.title}</h3>
                     <p>{project.body}</p>
