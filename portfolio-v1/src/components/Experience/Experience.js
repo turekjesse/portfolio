@@ -2,7 +2,7 @@ import MobileNav from "../Nav/MobileNav";
 import DesktopNav from "../Nav/DesktopNav";
 import { Grid, Image, Segment, Icon, Button, Header } from "semantic-ui-react";
 import GA_Logo from "../../assets/GA_Logo.png";
-import carhartt_wip_text_logo from "../../assets/carhartt_wip_text_logo.svg";
+import carhartt_wip_text_logo from "../../assets/carhartt_wip_text_logo-white.png";
 import Unis from "../../assets/Unis.png";
 import Resume from "../../assets/Resume-Jesse_Turek.pdf";
 
