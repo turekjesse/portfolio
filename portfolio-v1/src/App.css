@@ -147,6 +147,11 @@ body {
   padding-bottom:10px !important;
 }
 
+.project-segment {
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+
 .btn-segment {
   margin-bottom:0 !important;
   padding-bottom:0 !important;
@@ -176,6 +181,11 @@ small {
 
   .experience-visible {
     width:50vw;
+  }
+
+  .project-segment {
+    padding-left:1rem !important;
+    padding-right:1rem !important;
   }
 
   .btn-segment{
