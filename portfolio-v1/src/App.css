@@ -220,10 +220,14 @@ body {
   padding-right:0 !important;
 }
 
-.btn-segment {
+.exper-horiz-div {
   margin-bottom:0 !important;
-  padding-bottom:0 !important;
-  padding-top:2rem !important;
+}
+
+div.btn-segment {
+  margin-bottom:0px !important;
+  padding-bottom:20px !important;
+  padding-top:8px !important;
 }
 
 small {
