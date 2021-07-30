@@ -2,14 +2,18 @@ import { useState, useEffect } from 'react'
 import { Route } from 'react-router-dom'
 import './App.css';
 
+import MobileNav from './components/Nav/MobileNav';
+import DesktopNav from './components/Nav/DesktopNav';
 import About from './components/About/About';
 import Experience from './components/Experience/Experience';
 import Hobbies from './components/Hobbies/Hobbies';
 import Home from './components/Home/Home';
+import Home2 from './components/Home/Home2';
 import Projects from './components/Projects/Projects';
 
+
 function App() {
-  const breakpoint = 720
+  const breakpoint = 990
 
   const useViewPortWidth = () => {
     const [width, setWidth] = useState(window.innerWidth)
@@ -32,9 +36,12 @@ function App() {
     return { width };
   }
 
+  const { width } = useViewPortWidth();
+
   return (
     <>
-    <Route path="/" exact component={Home}/>
+    {width < breakpoint ? <MobileNav /> : <DesktopNav />}
+    <Route path="/" exact render={() => <Home2 breakpoint={breakpoint} useViewPortWidth={useViewPortWidth}/>}/>
     <Route
       path="/about"
       render={ () => <About breakpoint={breakpoint}
