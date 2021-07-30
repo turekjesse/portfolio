@@ -9,6 +9,15 @@ body {
   border-bottom: 1px solid rgba(255,255,255,.08) !important;
 }
 
+.ui.inverted.menu {
+  border: 0 solid transparent;
+  background: rgb(255,255,255, .1);
+  box-shadow: none;
+  position:sticky !important;
+  z-index: 100 !important;
+  top:0px;
+}
+
 .ui.menu .dropdown.item .menu {
   background-color: #1b1c1d;
 }
@@ -38,9 +47,17 @@ body {
 }
 
 .about-hidden {
-  height:70vh;
+  height:100vh;
   background-image: url('https://i.imgur.com/9l1PKOx.jpg');
   background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+}
+
+.about-hidden-2 {
+  height:calc(25vh - 50px);
+  background-image: url('https://i.imgur.com/9l1PKOx.jpg');
+  background-position: 10% 21%;
   background-origin: content-box;
   background-size: cover;
 }
@@ -67,6 +84,16 @@ body {
   background-size: 200%;
 }
 
+
+
+.projects-hidden-2 {
+  height:calc(25vh - 12.5px);
+  background-image: url('https://i.imgur.com/qTs3uOf.png');
+  background-position: top-left;
+  background-origin: content-box;
+  background-size: cover;
+}
+
 .experience-visible {
   display: flex;
   flex-direction: column;
@@ -87,6 +114,14 @@ body {
   background-size: cover;
 }
 
+.experience-hidden-2 {
+  height:calc(25vh - 50px);
+  background-image: url('https://i.imgur.com/ddJmNUy.png');
+  background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+}
+
 .hobbies-visible {
   display: flex;
   flex-direction: column;
@@ -95,6 +130,17 @@ body {
   height:90vh;
   color:white;
   width:100vw;
+  background-color:rgb(27,28,29, 90%);
+}
+
+.hobbies-visible-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  height:calc(25vh - 50px);
+  color:white;
+  width:25vw;
   background-color:rgb(27,28,29, 90%);
 }
 
@@ -128,6 +174,28 @@ body {
   background-position: center;
   background-origin: content-box;
   background-size: cover;
+}
+
+.hiking-2 {
+  background-image: url('https://i.imgur.com/NgQQ7dMh.jpg');
+  background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+}
+
+.hidden-image {
+  height:calc(25vh - 12.5px);
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  height:calc(25vh - 12.5px);
+  color:white;
+  width:100vw;
+  background-color:rgb(27,28,29, 90%);
 }
 
 .row {
@@ -164,8 +232,27 @@ small {
 
 @media screen and (min-width: 720px){
 
+  .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    height:calc(100vh - 50px);
+    color:white;
+    width:25vw;
+    background-color:rgb(27,28,29, 90%);
+  }
+
   .about-hidden {
     background-position: 10% 21%;
+  }
+
+  .hidden-image {
+    height:calc(100vh - 50px);
+  }
+
+  .about-hidden-2 {
+    background-position: center;
   }
 
   .projects-visible {
@@ -186,6 +273,21 @@ small {
   .project-segment {
     padding-left:1rem !important;
     padding-right:1rem !important;
+  }
+
+  .about-container {
+    padding: 0 30px !important;
+  }
+
+  .about-header {
+    padding-bottom: 8px !important;
+  }
+
+  .about-header > h1 {
+    font-size:4rem !important;
+    margin:0 !important;
+    padding:0 !important;
+    line-height:4rem;
   }
 
   .btn-segment{
