@@ -1,6 +1,4 @@
-import MobileNav from "../Nav/MobileNav";
-import DesktopNav from "../Nav/DesktopNav";
-import { Grid, Image, Segment, Icon, Button, Header } from "semantic-ui-react";
+import { Grid, Image, Segment, Icon, Button, Header, Divider } from "semantic-ui-react";
 import GA_Logo from "../../assets/GA_Logo.png";
 import carhartt_wip_text_logo from "../../assets/carhartt_wip_text_logo-white.png";
 import Unis from "../../assets/Unis.png";
@@ -49,25 +47,26 @@ const Experience = ({ useViewPortWidth, breakpoint }) => {
 
   return (
     <>
-      {width < breakpoint ? <MobileNav /> : <DesktopNav />}
-      <Segment className="no-margin" inverted>
-      <Header className="no-margin" textAlign='center' inverted as="h2" dividing>
-        Experience 
-      </Header>
-      <Segment className="no-margin btn-segment" textAlign="center" inverted>
-        <Button
-          as="a"
-          href={Resume}
-          target="_blank"
-          basic
-          color="grey"
-          icon
-          labelPosition="right"
-        >
-          View Resume
-          <Icon name="download" />
-        </Button>
-      </Segment>
+      <Segment inverted>
+        <Header className="no-margin" textAlign="center" inverted as="h1">
+          Experience
+        </Header>
+        <Segment className="btn-segment" textAlign="center" inverted>
+          <Button
+            as="a"
+            href={Resume}
+            target="_blank"
+            // inverted
+            color="grey"
+            icon
+            labelPosition="left"
+            size="big"
+          >
+            View Resume
+            <Icon name="file pdf outline" size='' />
+          </Button>
+        </Segment>
+        <Divider inverted className="exper-horiz-div" />
         <Grid centered columns="equal" relaxed="very">
           {experience.map((job, idx) => {
             if (idx < 2) {
