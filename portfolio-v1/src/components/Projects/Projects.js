@@ -1,6 +1,4 @@
-import MobileNav from "../Nav/MobileNav";
-import DesktopNav from "../Nav/DesktopNav";
-import { Grid, Image, Segment, Button, Header } from "semantic-ui-react";
+import { Grid, Image, Segment, Button, Header, Divider } from "semantic-ui-react";
 import whack_a_moji from "../../assets/whack_a_moji.png";
 import spacecadet from "../../assets/spacecadet.png";
 import easternmanner from "../../assets/easternmanner.png";
@@ -45,12 +43,10 @@ const Projects = ({ useViewPortWidth, breakpoint }) => {
 
   return (
     <>
-      {width < breakpoint ? <MobileNav /> : <DesktopNav />}
-      <Segment className="no-margin" inverted>
-          <Header className="no-margin" textAlign='center' inverted as="h2" dividing>Projects</Header>
+      <Segment className inverted>
+          <Header className="no-margin" textAlign='center' inverted as="h1">Projects</Header>
+          <Divider inverted className="proj-horiz-div" />
         <Grid centered columns="equal" relaxed="very">
-      
-      
           {projects.map((project, idx) => {
             if (idx < 2) {
               return (
