@@ -3,6 +3,10 @@ body {
   color:white;
 }
 
+.project-segment > h3 {
+  margin-top:14px;
+}
+
 .menu{
   height:50px;
   margin-bottom:0 !important;
@@ -221,6 +225,11 @@ body {
 }
 
 .exper-horiz-div {
+  margin-bottom:0 !important;
+}
+
+.proj-horiz-div {
+  padding-top:14px;
   margin-bottom:0 !important;
 }
 
