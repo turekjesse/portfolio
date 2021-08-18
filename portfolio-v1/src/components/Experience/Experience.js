@@ -12,7 +12,7 @@ const Experience = ({ useViewPortWidth, breakpoint }) => {
       timeline: "Current",
       image: `${GA_Logo}`,
       description:
-        "Engaged in a 12 week, 500+ hour, remote software engineering immersive course for full-stack web development.",
+        "Engaged in a 12 week, 500+ hour, remote software engineering immersive course while learning programming and computer science fundamentals in regards to full-stack development. Worked collaboratively in an agile development workflow using industry-standard version control tools. ",
       skills: "HTML, CSS, JavaSript, MERN",
     },
     {
