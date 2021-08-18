@@ -1,0 +1,21 @@
+.about-segment {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+@media screen and (min-width: 720px) {
+  .about-container {
+    padding: 0 30px !important;
+  }
+
+  .about-header {
+    padding-bottom: 8px !important;
+  }
+
+  .about-header > h1 {
+    font-size: 4rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 4rem;
+  }
+}
