@@ -1,9 +1,21 @@
-import { Grid, Image, Segment, Icon, Button, Header, } from "semantic-ui-react";
-import { ExperienceData } from "./ExperienceData";
+import { Grid, Image, Segment, Icon, Button, Header } from "semantic-ui-react";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import { ExperienceData, Skills } from "./ExperienceData";
 import Resume2 from "../../assets/Jesse_Turek-Resume.pdf";
 // import Resume from "../../assets/Resume-Jesse_Turek.pdf";
 
-const Experience = () => {
+const Experience = ({ useViewPortWidth, breakpoint }) => {
+  const { width } = useViewPortWidth();
+
+  const slidesPerView = width < breakpoint ? 3 : 7
+
+  const [sliderRef] = useKeenSlider({
+    loop: true,
+    mode: "free-snap",
+    slidesPerView: slidesPerView,
+    spacing: 10,
+  });
 
   return (
     <>
@@ -23,32 +35,50 @@ const Experience = () => {
             size="big"
           >
             View Resume
-            <Icon name="file pdf outline" size='' />
+            <Icon name="file pdf outline" size="" />
           </Button>
         </Segment>
         {/* <Divider inverted className="exper-horiz-div" /> */}
         <Grid centered columns="equal" relaxed="very">
-          {ExperienceData.map((job, idx) => {          
-              return (
-                <Grid.Column
-                  // style={width < breakpoint ? mobileBorder : desktopBorder}
-                  className="job-segment"
-                  mobile={16}
-                  computer={5}
-                >
-                  <Segment textAlign="center" inverted>
-                    <Image width='200px' centered src={job.image} />
-                    {/* <h1>{job.company}</h1> */}
-                    <h3>{job.title}</h3>
-                    <h5>{job.timeline}</h5>
-                    <p style={{textAlign: 'left'}}>{job.description}</p>
-                    <small>Skills: {job.skills}</small>
-                  </Segment>
-                </Grid.Column>
-              );            
-          })}          
+          {ExperienceData.map((job, idx) => {
+            return (
+              <Grid.Column
+                // style={width < breakpoint ? mobileBorder : desktopBorder}
+                className="job-segment"
+                mobile={16}
+                computer={5}
+              >
+                <Segment textAlign="center" inverted>
+                  <Image width="200px" centered src={job.image} />
+                  {/* <h1>{job.company}</h1> */}
+                  <h3>{job.title}</h3>
+                  <h5>{job.timeline}</h5>
+                  <p style={{ textAlign: "left" }}>{job.description}</p>
+                  <small>Skills: {job.skills}</small>
+                </Segment>
+              </Grid.Column>
+            );
+          })}
         </Grid>
       </Segment>
+        <Header className="no-margin" textAlign="center" inverted as="h1">
+          Skills
+        </Header>
+        <Segment inverted>
+
+          <div ref={sliderRef} className="keen-slider">
+        {
+          Skills.map((skill, idx) => {
+            return (
+              <div style={{textAlign: "center"}} className="keen-slider__slide">
+                <img height="80px" alt={skill.title}  src={skill.logo}/>
+                <p style={{padding: '20px'}}>{skill.title}</p>
+              </div>
+            )
+          })
+        }                     
+          </div>
+        </Segment>
     </>
   );
 };
