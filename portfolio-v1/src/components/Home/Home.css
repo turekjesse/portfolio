@@ -1,0 +1,66 @@
+
+.about-hidden-2 {
+  background-image: url("https://i.imgur.com/9l1PKOx.jpg");
+  background-position: 10% 21%;
+  background-origin: content-box;
+  background-size: cover;
+}
+
+.projects-hidden-2 {
+  background-image: url("https://apod.nasa.gov/apod/image/2108/PerseidsLost_SlovinskyHoralek_2048.jpg");
+  background-position: center;
+  background-origin: content-box;
+  background-size: 175%;
+}
+
+.experience-hidden-2 {
+  background-image: url("https://i.imgur.com/ddJmNUy.png");
+  background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+}
+
+.hidden-image {
+  height: calc(33vh - 14px);
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(33vh - 14px);
+  color: white;
+  width: 100vw;
+  background-color: rgb(27, 28, 29, 90%);
+}
+
+@media screen and (min-width: 720px) {
+  .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 50px);
+    color: white;
+    width: calc(100vw/3);
+    background-color: rgb(27, 28, 29, 90%);
+  }
+
+  .about-hidden {
+    background-position: 10% 21%;
+  }
+
+  .hidden-image {
+    height: calc(100vh - 50px);
+  }
+
+  .about-hidden-2 {
+    background-position: center;
+  }
+
+  .projects-hidden-2 {
+    background-position: top;
+    background-size: 210%;
+  }
+}

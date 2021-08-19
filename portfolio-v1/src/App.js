@@ -7,7 +7,7 @@ import DesktopNav from './components/Nav/DesktopNav';
 import About from './components/About/About';
 import Experience from './components/Experience/Experience';
 import Hobbies from './components/Hobbies/Hobbies';
-import Home from './components/Home/Home';
+// import Home from './components/Home/Home';
 import Home2 from './components/Home/Home2';
 import Projects from './components/Projects/Projects';
 

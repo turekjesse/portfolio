@@ -1,5 +1,6 @@
 import { Reveal, Grid, Container } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import './Home.css'
 
 const Home2 = ({ useViewPortWidth, breakpoint }) => {
 
@@ -15,8 +16,8 @@ const Home2 = ({ useViewPortWidth, breakpoint }) => {
       
   return (
     <>
-      <Grid centered inverted columns="equal">
-          <Grid.Column mobile={16} tablet={4} computer={4}>
+      <Grid centered inverted columns={width > breakpoint ? "three" : "one"}>
+          <Grid.Column>
             <Link to="/about">
               <Reveal animated="fade">
                 <Reveal.Content visible>
@@ -30,7 +31,7 @@ const Home2 = ({ useViewPortWidth, breakpoint }) => {
               </Reveal>
             </Link>
           </Grid.Column>
-          <Grid.Column mobile={16} tablet={4} computer={4}>
+          <Grid.Column >
             <Link to="/projects">
                 <Reveal animated="fade">
                     <Reveal.Content visible>
@@ -44,7 +45,7 @@ const Home2 = ({ useViewPortWidth, breakpoint }) => {
                 </Reveal>
             </Link>
           </Grid.Column>
-          <Grid.Column mobile={16} tablet={4} computer={4}>
+          <Grid.Column >
           <Link to="/experience">
                 <Reveal animated="fade">
                     <Reveal.Content visible>
@@ -58,20 +59,6 @@ const Home2 = ({ useViewPortWidth, breakpoint }) => {
                 </Reveal>
             </Link>
           </Grid.Column>
-        <Grid.Column mobile={16} tablet={4} computer={4}>
-        <Link to="/hobbies">
-              <Reveal animated="fade">
-                <Reveal.Content visible>
-                  <div className="overlay">
-                    <h1>Hobbies</h1>
-                  </div>
-                </Reveal.Content>
-                <Reveal.Content hidden>
-                  <Container className=" hiking-2 hidden-image" fluid></Container>
-                </Reveal.Content>
-              </Reveal>
-            </Link>
-        </Grid.Column>
       </Grid>
     </>
   );
