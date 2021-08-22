@@ -65,7 +65,7 @@ const About = ({ useViewPortWidth, breakpoint }) => {
             <div className="about-container">
               <Segment size="large" inverted className="no-margin">
                 <p>
-                  When I'm not cracking coding, you can find me outdoors surfing, bikepacking, hiking, or skateboarding or in a workshop tuning up bikes, turning wooden bowls, or making custom furniture.
+                  When I'm not cracking code, you can find me outdoors surfing, bikepacking, hiking, or skateboarding or in a workshop tuning up bikes, turning wooden bowls, or making custom furniture.
                 </p>
                 <p>
                   It's rare that I'm ever inactive, but when I am, I'm relaxing on the couch or in the park with my dog, Asha.
