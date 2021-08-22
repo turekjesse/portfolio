@@ -18,8 +18,8 @@ export const ProjectData = [
     technologies: "HTML, CSS, JavaScript",
   },
   {
-    url: "https://space-cadet.netlify.app/",
-    repo_url: "https://github.com/turekjesse/project-2",
+    url: "https://devography.netlify.app/",
+    repo_url: "https://github.com/Devography",
     title: "Devography",
     image: `${devography}`,
     body: "Devography is a working, interactive, full-stack application that receives data from a custom API that my team designed. The app allows users to learn more about programming languages, their icons, their authors, and their creation date.",
@@ -30,7 +30,7 @@ export const ProjectData = [
     repo_url: "https://github.com/turekjesse/project-2",
     title: "Space Cadet",
     image: `${spacecadet}`,
-    body: "Space Cadet is a modern take on NASA's infamous Astronomy Photo of the Day website. This single page app recieves data from NASA's API, allowing users to view daily astronomy photos and a image galleries from various Mars exploration missions.",
+    body: "Space Cadet is a modern take on NASA's infamous Astronomy Photo of the Day website. This single page app recieves data from NASA's API, allowing users to view daily astronomy photos and image galleries from various Mars exploration missions.",
     technologies: "React, Bootstrap, Masonry",
   },
   {
