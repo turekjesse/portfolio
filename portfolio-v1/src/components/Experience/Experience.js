@@ -5,6 +5,8 @@ import { ExperienceData, Skills } from "./ExperienceData";
 import Resume2 from "../../assets/Jesse_Turek-Resume.pdf";
 // import Resume from "../../assets/Resume-Jesse_Turek.pdf";
 
+const animation = {duration: 30000, easing: (t) => t }
+
 const Experience = ({ useViewPortWidth, breakpoint }) => {
   const { width } = useViewPortWidth();
 
@@ -12,9 +14,21 @@ const Experience = ({ useViewPortWidth, breakpoint }) => {
 
   const [sliderRef] = useKeenSlider({
     loop: true,
-    mode: "free-snap",
-    slidesPerView: slidesPerView,
-    spacing: 10,
+    mode: "free",
+    renderMode: "performance",
+    slides: {
+      perView: slidesPerView,
+      spacing: 15,
+    },
+    created(s) {
+      s.moveToIdx(17, true, animation)
+    },
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 17, true, animation)
+    },
+    animationEnded(s) {
+      s.moveToIdx(s.track.details.abs + 17, true, animation)
+    },
   });
 
   return (
@@ -46,7 +60,9 @@ const Experience = ({ useViewPortWidth, breakpoint }) => {
                 // style={width < breakpoint ? mobileBorder : desktopBorder}
                 className="job-segment"
                 mobile={16}
+                tablet={8}
                 computer={5}
+                widescreen={4}
               >
                 <Segment textAlign="center" inverted>
                   <Image width="200px" centered src={job.image} />
