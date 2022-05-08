@@ -6846,10 +6846,10 @@ jsprim@^1.2.2:
     array-includes "^3.1.2"
     object.assign "^4.1.2"
 
-keen-slider@^5.5.1:
-  version "5.5.1"
-  resolved "https://registry.yarnpkg.com/keen-slider/-/keen-slider-5.5.1.tgz#1493f552eadf0f5b8229defd83c626eb6dd58c13"
-  integrity sha512-QXGZGt5Hbe0YufR/RYbOG03MmOk43RQEXqkkSvjr8ZS67sVR7LRp5RIvJALfjl+A7BnHNr1wd1QBOemwy65Lfw==
+keen-slider@^6.6.13:
+  version "6.6.13"
+  resolved "https://registry.yarnpkg.com/keen-slider/-/keen-slider-6.6.13.tgz#7adcc6b05c3e12a771f75eb7d8f0bce8e7617bbb"
+  integrity sha512-kTPIhazE/6EhG7Z0d5OzweF1x7oRGS4HIoX0PdZB1kgYXuROW8vJPb0//BHIffZtQ1SzGqSWtxsWe3TgN9RtIA==
 
 keyboard-key@^1.1.0:
   version "1.1.0"
