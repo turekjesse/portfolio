@@ -1,3 +1,4 @@
+import persado_logo from "../../assets/persado_logo_white.png";
 import GA_Logo2 from "../../assets/GA_Logo2.png";
 import carhartt_wip_text_logo from "../../assets/carhartt_wip_text_logo-white.png";
 import Unis from "../../assets/Unis.png";
@@ -24,6 +25,15 @@ import sketch from "../../assets/Skills/sketch.png";
 
 export const ExperienceData = [
   {
+    company: "Persado",
+    title: "Front End Developer",
+    timeline: "10 / 2021 - Present",
+    image: `${persado_logo}`,
+    description:
+      "Assigned to Persado's most demanding and valuable account within the retail vertical. Built and delivered multi-variant marketing campaign assets and/or web experiences using a variety of design tools and technologies. Identified oportunities to streamline and automate internal processes to improve efficiency within tight SLAs and timelines.",
+    skills: "HTML, CSS, JavaSript, Python, Excel, Photoshop, Sketch, Adobe XD",
+  },
+  {
     company: "General Assembly",
     title: "Software Engineering Immersive",
     timeline: "5 / 2021 - 8 / 2021",
@@ -47,7 +57,7 @@ export const ExperienceData = [
     timeline: "6 / 2015 - 12 / 2017",
     image: `${Unis}`,
     description:
-      "Owned all Ecommerce business operations including, but not limited to: order fulfillment, customer service, merchandising, SEO, and photo production",
+      "Owned all Ecommerce business operations including, but not limited to: order fulfillment, customer service, merchandising, SEO, and photo production.",
     skills: "Shopify, Lightspeed, Mailchimp, Excel, Photoshop",
   },
 ];
