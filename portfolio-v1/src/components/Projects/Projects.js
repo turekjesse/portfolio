@@ -3,13 +3,15 @@ import {ProjectData} from './ProjectData'
 
 const Projects = () => {
 
+let projectDataReverse = ProjectData.reverse()
+
   return (
     <>
       <Segment className inverted>
           <Header className="no-margin" textAlign='center' inverted as="h1">Projects</Header>
           {/* <Divider inverted className="proj-horiz-div" /> */}
         <Grid centered columns="equal" relaxed="very">
-          {ProjectData.reverse().map((project, idx) => {            
+          {projectDataReverse.map((project, idx) => {            
               return (
                 <Grid.Column
                   // style={width < breakpoint ? mobileBorder : desktopBorder}
