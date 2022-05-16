@@ -1,4 +1,4 @@
-import { Dropdown, Menu } from "semantic-ui-react";
+import { Dropdown, Menu, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const MobileNav = () => {
@@ -13,6 +13,10 @@ const MobileNav = () => {
           {/* <Menu.Item as={Link} to="/hobbies" name="hobbies" /> */}
         </Dropdown.Menu>
       </Dropdown>
+      <Button.Group compact inverted>
+        <Button compact inverted icon="lightbulb" />
+        <Button compact icon="lightbulb outline" />
+      </Button.Group>
     </Menu>
   );
 };
