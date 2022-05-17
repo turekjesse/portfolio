@@ -50,18 +50,30 @@ function App() {
 
   return (
     <>
-      {width < breakpoint ? <MobileNav /> : <DesktopNav />}
+      {width < breakpoint ? (
+        <MobileNav handleDarkMode={handleDarkMode} />
+      ) : (
+        <DesktopNav handleDarkMode={handleDarkMode} />
+      )}
       <Route
         path="/"
         exact
         render={() => (
-          <Home2 breakpoint={breakpoint} useViewPortWidth={useViewPortWidth} />
+          <Home2
+            breakpoint={breakpoint}
+            handleDarkMode={handleDarkMode}
+            useViewPortWidth={useViewPortWidth}
+          />
         )}
       />
       <Route
         path="/about"
         render={() => (
-          <About breakpoint={breakpoint} useViewPortWidth={useViewPortWidth} />
+          <About
+            breakpoint={breakpoint}
+            handleDarkMode={handleDarkMode}
+            useViewPortWidth={useViewPortWidth}
+          />
         )}
       />
       <Route
@@ -70,6 +82,7 @@ function App() {
           <Projects
             breakpoint={breakpoint}
             useViewPortWidth={useViewPortWidth}
+            handleDarkMode={handleDarkMode}
           />
         )}
       />
@@ -79,6 +92,7 @@ function App() {
           <Experience
             breakpoint={breakpoint}
             useViewPortWidth={useViewPortWidth}
+            handleDarkMode={handleDarkMode}
           />
         )}
       />
@@ -88,6 +102,7 @@ function App() {
           <Hobbies
             breakpoint={breakpoint}
             useViewPortWidth={useViewPortWidth}
+            handleDarkMode={handleDarkMode}
           />
         )}
       />
