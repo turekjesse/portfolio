@@ -8,23 +8,21 @@ const MobileNav = ({ handleInverted, isInverted }) => {
   return (
     <Menu inverted={isInverted}>
       <Dropdown item icon="bars" simple>
-        <Dropdown.Menu inverted>
+        <Dropdown.Menu>
           <Menu.Item name="home" as={Link} to="/" />
           <Menu.Item as={Link} to="/about" name="about" />
           <Menu.Item as={Link} to="/projects" name="projects" />
           <Menu.Item as={Link} to="/experience" name="experience" />
         </Dropdown.Menu>
       </Dropdown>
-      <Button.Group size="small" inverted>
-        <Button
-          color={isInverted ? "black" : "white"}
-          icon={isInverted ? "lightbulb outline" : "lightbulb"}
-          onClick={() => {
-            setDisabled(!isDisabled);
-            handleInverted();
-          }}
-        />
-      </Button.Group>
+      <Button
+        color={isInverted ? "black" : "white"}
+        icon={isInverted ? "lightbulb outline" : "lightbulb"}
+        onClick={() => {
+          setDisabled(!isDisabled);
+          handleInverted();
+        }}
+      />
     </Menu>
   );
 };
