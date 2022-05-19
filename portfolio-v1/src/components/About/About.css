@@ -3,6 +3,11 @@
   padding-bottom: 10px !important;
 }
 
+.ui.segment.no-margin {
+  border: none;
+  box-shadow: none;
+}
+
 @media screen and (min-width: 720px) {
   .about-container {
     padding: 0 30px !important;

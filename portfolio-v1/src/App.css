@@ -1,4 +1,9 @@
 body {
+  background-color: white;
+  color: #1b1c1d;
+}
+
+body.inverted{
   background-color: #1b1c1d;
   color:white;
 }
@@ -13,13 +18,22 @@ body {
   border-bottom: 1px solid rgba(255,255,255,.08) !important;
 }
 
+.ui.menu {
+    border: 0 solid transparent;
+    border-bottom: 1px solid rgba(44, 44, 44, 0.08) !important;
+    box-shadow: none;
+    position:sticky !important;
+    z-index: 100 !important;
+    top:0px;
+}
+
 .ui.inverted.menu {
   border: 0 solid transparent;
-  background: rgb(255,255,255, .1);
   box-shadow: none;
   position:sticky !important;
   z-index: 100 !important;
   top:0px;
+  border-bottom: 1px solid rgba(255,255,255,.08) !important;
 }
 
 .ui.menu .dropdown.item .menu {
@@ -33,6 +47,11 @@ body {
 .ui.menu .ui.dropdown .menu > .item:hover {
   color: white !important;
   text-shadow: 0px 0px 1px white !important;
+}
+
+.ui.segment { 
+  border: none;
+  box-shadow: none;
 }
 
 .ui.container {
