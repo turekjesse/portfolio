@@ -74,7 +74,11 @@ const Experience = ({ useViewPortWidth, breakpoint, isInverted }) => {
                 widescreen={4}
               >
                 <Segment textAlign="center" inverted={isInverted}>
-                  <Image width="200px" centered src={job.image} />
+                  <Image
+                    width="200px"
+                    centered
+                    src={idx % 2 === 0 && !isInverted ? job.image_2 : job.image}
+                  />
                   {/* <h1>{job.company}</h1> */}
                   <h3>{job.title}</h3>
                   <h5>{job.timeline}</h5>
