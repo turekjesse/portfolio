@@ -12,15 +12,19 @@ import Home2 from "./components/Home/Home2";
 import Projects from "./components/Projects/Projects";
 
 function App() {
-  // DARK-MODE HANDLER:
-  const dark = true;
-  const [mode, setMode] = useState(dark);
+  const body = document.querySelector("body")
 
-  const handleDarkMode = () => {
-    setMode(!mode);
-    console.log(mode);
+  const toggleInverted = () => {
+    body.classList.toggle("inverted")
+  }
+
+  // DARK-MODE HANDLER:
+  const [isInverted, setInverted] = useState(false);
+
+  const handleInverted = () => {
+    setInverted(!isInverted);
+    toggleInverted()
   };
-  console.log(mode);
 
   // BREAKPOINT HANDLER:
   // WE USE THIS TO RENDER DIFFERENT COMPONENTS AT CERTAIN BREAKPOINTS
@@ -51,9 +55,9 @@ function App() {
   return (
     <>
       {width < breakpoint ? (
-        <MobileNav handleDarkMode={handleDarkMode} />
+        <MobileNav isInverted={isInverted} handleInverted={handleInverted} />
       ) : (
-        <DesktopNav handleDarkMode={handleDarkMode} />
+        <DesktopNav isInverted={isInverted} handleInverted={handleInverted} />
       )}
       <Route
         path="/"
@@ -61,8 +65,9 @@ function App() {
         render={() => (
           <Home2
             breakpoint={breakpoint}
-            handleDarkMode={handleDarkMode}
+            handleInverted={handleInverted}
             useViewPortWidth={useViewPortWidth}
+            isInverted={isInverted}
           />
         )}
       />
@@ -71,8 +76,9 @@ function App() {
         render={() => (
           <About
             breakpoint={breakpoint}
-            handleDarkMode={handleDarkMode}
+            handleInverted={handleInverted}
             useViewPortWidth={useViewPortWidth}
+            isInverted={isInverted}
           />
         )}
       />
@@ -82,7 +88,8 @@ function App() {
           <Projects
             breakpoint={breakpoint}
             useViewPortWidth={useViewPortWidth}
-            handleDarkMode={handleDarkMode}
+            handleInverted={handleInverted}
+            isInverted={isInverted}
           />
         )}
       />
@@ -92,7 +99,8 @@ function App() {
           <Experience
             breakpoint={breakpoint}
             useViewPortWidth={useViewPortWidth}
-            handleDarkMode={handleDarkMode}
+            handleInverted={handleInverted}
+            isInverted={isInverted}
           />
         )}
       />
@@ -102,7 +110,8 @@ function App() {
           <Hobbies
             breakpoint={breakpoint}
             useViewPortWidth={useViewPortWidth}
-            handleDarkMode={handleDarkMode}
+            handleInverted={handleInverted}
+            isInverted={isInverted}
           />
         )}
       />
