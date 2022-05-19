@@ -5,30 +5,53 @@ import { ExperienceData, Skills } from "./ExperienceData";
 import Resume2 from "../../assets/Jesse_Turek-Resume.pdf";
 // import Resume from "../../assets/Resume-Jesse_Turek.pdf";
 
-const Experience = ({ useViewPortWidth, breakpoint }) => {
+const animation = { duration: 30000, easing: (t) => t };
+
+const Experience = ({ useViewPortWidth, breakpoint, isInverted }) => {
   const { width } = useViewPortWidth();
 
-  const slidesPerView = width < breakpoint ? 3 : 7
+  const slidesPerView = width < breakpoint ? 3 : 7;
 
   const [sliderRef] = useKeenSlider({
     loop: true,
-    mode: "free-snap",
-    slidesPerView: slidesPerView,
-    spacing: 10,
+    mode: "free",
+    renderMode: "performance",
+    slides: {
+      perView: slidesPerView,
+      spacing: 15,
+    },
+    created(s) {
+      s.moveToIdx(17, true, animation);
+    },
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 17, true, animation);
+    },
+    animationEnded(s) {
+      s.moveToIdx(s.track.details.abs + 17, true, animation);
+    },
   });
 
   return (
     <>
-      <Segment inverted>
-        <Header className="no-margin" textAlign="center" inverted as="h1">
+      <Segment inverted={isInverted}>
+        <Header
+          className="no-margin"
+          textAlign="center"
+          inverted={isInverted}
+          as="h1"
+        >
           Experience
         </Header>
-        <Segment className="btn-segment" textAlign="center" inverted>
+        <Segment
+          className="btn-segment"
+          textAlign="center"
+          inverted={isInverted}
+        >
           <Button
             as="a"
             href={Resume2}
             target="_blank"
-            // inverted
+            // inverted={isInverted}
             color="grey"
             icon
             labelPosition="left"
@@ -38,7 +61,7 @@ const Experience = ({ useViewPortWidth, breakpoint }) => {
             <Icon name="file pdf outline" size="" />
           </Button>
         </Segment>
-        {/* <Divider inverted className="exper-horiz-div" /> */}
+        {/* <Divider inverted={isInverted} className="exper-horiz-div" /> */}
         <Grid centered columns="equal" relaxed="very">
           {ExperienceData.map((job, idx) => {
             return (
@@ -46,10 +69,16 @@ const Experience = ({ useViewPortWidth, breakpoint }) => {
                 // style={width < breakpoint ? mobileBorder : desktopBorder}
                 className="job-segment"
                 mobile={16}
+                tablet={8}
                 computer={5}
+                widescreen={4}
               >
-                <Segment textAlign="center" inverted>
-                  <Image width="200px" centered src={job.image} />
+                <Segment textAlign="center" inverted={isInverted}>
+                  <Image
+                    width="200px"
+                    centered
+                    src={idx % 2 === 0 && !isInverted ? job.image_2 : job.image}
+                  />
                   {/* <h1>{job.company}</h1> */}
                   <h3>{job.title}</h3>
                   <h5>{job.timeline}</h5>
@@ -61,24 +90,29 @@ const Experience = ({ useViewPortWidth, breakpoint }) => {
           })}
         </Grid>
       </Segment>
-        <Header className="no-margin" textAlign="center" inverted as="h1">
-          Skills
-        </Header>
-        <Segment inverted>
-
-          <div ref={sliderRef} className="keen-slider">
-        {
-          Skills.map((skill, idx) => {
+      <Header
+        className="no-margin"
+        textAlign="center"
+        inverted={isInverted}
+        as="h1"
+      >
+        Skills
+      </Header>
+      <Segment inverted={isInverted}>
+        <div ref={sliderRef} className="keen-slider">
+          {Skills.map((skill, idx) => {
             return (
-              <div style={{textAlign: "center"}} className="keen-slider__slide">
-                <img height="80px" alt={skill.title}  src={skill.logo}/>
-                <p style={{padding: '20px'}}>{skill.title}</p>
+              <div
+                style={{ textAlign: "center" }}
+                className="keen-slider__slide"
+              >
+                <img height="80px" alt={skill.title} src={skill.logo} />
+                <p style={{ padding: "20px" }}>{skill.title}</p>
               </div>
-            )
-          })
-        }                     
-          </div>
-        </Segment>
+            );
+          })}
+        </div>
+      </Segment>
     </>
   );
 };
