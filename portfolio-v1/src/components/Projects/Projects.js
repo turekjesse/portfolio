@@ -1,8 +1,17 @@
 import { Grid, Image, Segment, Button, Header } from "semantic-ui-react";
 import { ProjectData } from "./ProjectData";
+import { useState, useEffect } from "react";
+
 
 const Projects = ({ isInverted }) => {
-  let projectDataReverse = ProjectData.reverse();
+  
+  const [projects, setProjects] = useState([])
+
+  console.log(projects)
+  
+  useEffect(() => {
+    setProjects(ProjectData.reverse())    
+  },[])
 
   return (
     <>
@@ -17,13 +26,14 @@ const Projects = ({ isInverted }) => {
         </Header>
         {/* <Divider inverted={isInverted} className="proj-horiz-div" /> */}
         <Grid centered columns="equal" relaxed="very">
-          {projectDataReverse.map((project, idx) => {
+          {projects.map((project, key) => {
             return (
               <Grid.Column
                 // style={width < breakpoint ? mobileBorder : desktopBorder}
                 className="job-segment"
                 mobile={16}
                 computer={5}
+                key={key}
               >
                 <Segment
                   textAlign="center"
