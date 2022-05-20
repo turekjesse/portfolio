@@ -45,8 +45,7 @@ const Projects = ({ isInverted }) => {
                   <p
                     style={{
                       textAlign: "left",
-                      padding: "0 1.2rem",
-                      color: `{isInverted ? null : black}`,
+                      padding: "0 1.2rem",                  
                     }}
                   >
                     {project.body}
