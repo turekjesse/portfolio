@@ -16,7 +16,7 @@ const MobileNav = ({ handleInverted, isInverted }) => {
         </Dropdown.Menu>
       </Dropdown>
       <Button
-        color={isInverted ? "black" : "white"}
+        color={isInverted ? "black" : null}
         icon={isInverted ? "lightbulb outline" : "lightbulb"}
         onClick={() => {
           setDisabled(!isDisabled);
