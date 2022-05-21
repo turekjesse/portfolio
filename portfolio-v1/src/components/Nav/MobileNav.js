@@ -1,4 +1,4 @@
-import { Dropdown, Menu, Button } from "semantic-ui-react";
+import { Dropdown, Menu, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -6,7 +6,7 @@ const MobileNav = ({ handleInverted, isInverted }) => {
   const [isDisabled, setDisabled] = useState(false);
 
   return (
-    <Menu inverted={isInverted}>
+    <Menu icon inverted={isInverted}>
       <Dropdown item icon="bars" simple>
         <Dropdown.Menu>
           <Menu.Item name="home" as={Link} to="/" />
@@ -15,14 +15,14 @@ const MobileNav = ({ handleInverted, isInverted }) => {
           <Menu.Item as={Link} to="/experience" name="experience" />
         </Dropdown.Menu>
       </Dropdown>
-      <Button
-        color={isInverted ? "black" : null}
-        icon={isInverted ? "lightbulb outline" : "lightbulb"}
+      <Menu.Item
         onClick={() => {
           setDisabled(!isDisabled);
           handleInverted();
         }}
-      />
+      >
+        <Icon name={isInverted ? "lightbulb outline" : "lightbulb"} />
+      </Menu.Item>
     </Menu>
   );
 };

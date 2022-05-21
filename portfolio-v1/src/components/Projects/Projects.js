@@ -1,18 +1,6 @@
 import { Grid, Image, Segment, Button, Header } from "semantic-ui-react";
-import { ProjectData } from "./ProjectData";
-import { useState, useEffect } from "react";
 
-
-const Projects = ({ isInverted }) => {
-  
-  const [projects, setProjects] = useState([])
-
-  console.log(projects)
-  
-  useEffect(() => {
-    setProjects(ProjectData.reverse())    
-  },[])
-
+const Projects = ({ isInverted, projects }) => {
   return (
     <>
       <Segment className="no-margin" inverted={isInverted}>
@@ -45,7 +33,7 @@ const Projects = ({ isInverted }) => {
                   <p
                     style={{
                       textAlign: "left",
-                      padding: "0 1.2rem",                  
+                      padding: "0 1.2rem",
                     }}
                   >
                     {project.body}
