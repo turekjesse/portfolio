@@ -1,13 +1,12 @@
 import { Grid, Image, Segment, Icon, Button, Header } from "semantic-ui-react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import { ExperienceData, Skills } from "./ExperienceData";
 import Resume2 from "../../assets/Jesse_Turek-Resume.pdf";
 // import Resume from "../../assets/Resume-Jesse_Turek.pdf";
 
 const animation = { duration: 30000, easing: (t) => t };
 
-const Experience = ({ useViewPortWidth, breakpoint, isInverted }) => {
+const Experience = ({ useViewPortWidth, breakpoint, isInverted, Jobs, Skills }) => {
   const { width } = useViewPortWidth();
 
   const slidesPerView = width < breakpoint ? 3 : 7;
@@ -63,7 +62,7 @@ const Experience = ({ useViewPortWidth, breakpoint, isInverted }) => {
         </Segment>
         {/* <Divider inverted={isInverted} className="exper-horiz-div" /> */}
         <Grid centered columns="equal" relaxed="very">
-          {ExperienceData.map((job, idx) => {
+          {Jobs.map((job, idx) => {
             return (
               <Grid.Column
                 // style={width < breakpoint ? mobileBorder : desktopBorder}

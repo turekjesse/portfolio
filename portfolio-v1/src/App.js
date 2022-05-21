@@ -6,25 +6,35 @@ import MobileNav from "./components/Nav/MobileNav";
 import DesktopNav from "./components/Nav/DesktopNav";
 import About from "./components/About/About";
 import Experience from "./components/Experience/Experience";
+import { Jobs, Skills } from "./data/ExperienceData";
 import Hobbies from "./components/Hobbies/Hobbies";
 // import Home from './components/Home/Home';
 import Home2 from "./components/Home/Home2";
 import Projects from "./components/Projects/Projects";
+import { ProjectData } from "./data/ProjectData";
 
 function App() {
-  const body = document.querySelector("body")
+  const body = document.querySelector("body");
 
   const toggleInverted = () => {
-    body.classList.toggle("inverted")
-  }
+    body.classList.toggle("inverted");
+  };
 
   // DARK-MODE HANDLER:
   const [isInverted, setInverted] = useState(false);
 
   const handleInverted = () => {
     setInverted(!isInverted);
-    toggleInverted()
+    toggleInverted();
   };
+
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    setProjects(ProjectData.reverse());
+    console.log(projects)
+    //eslint-disable-next-line
+  }, []);
 
   // BREAKPOINT HANDLER:
   // WE USE THIS TO RENDER DIFFERENT COMPONENTS AT CERTAIN BREAKPOINTS
@@ -90,6 +100,7 @@ function App() {
             useViewPortWidth={useViewPortWidth}
             handleInverted={handleInverted}
             isInverted={isInverted}
+            projects={projects}
           />
         )}
       />
@@ -101,6 +112,8 @@ function App() {
             useViewPortWidth={useViewPortWidth}
             handleInverted={handleInverted}
             isInverted={isInverted}
+            Jobs={Jobs}
+            Skills={Skills}
           />
         )}
       />

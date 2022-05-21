@@ -1,12 +1,13 @@
-import whack_a_moji from "../../assets/whack_a_moji.png";
-import spacecadet from "../../assets/spacecadet.png";
-import Artboard from "../../assets/Artboard.png";
-import portfolio1 from "../../assets/portfolio1.png";
-import devography from "../../assets/devography.png";
-// import easternmanner from "../../assets/easternmanner.png";
-// import portfolio2 from "../../assets/portfolio2.png";
-// import portfolio3 from "../../assets/portfolio3.png";
-// import portfolio4 from "../../assets/portfolio4.png";
+import whack_a_moji from "../assets/whack_a_moji.png";
+import spacecadet from "../assets/spacecadet.png";
+import Artboard from "../assets/Artboard.png";
+import portfolio1 from "../assets/portfolio1.png";
+import devography from "../assets/devography.png";
+
+// import easternmanner from "/assets/easternmanner.png";
+// import portfolio2 from "/assets/portfolio2.png";
+// import portfolio3 from "/assets/portfolio3.png";
+// import portfolio4 from "/assets/portfolio4.png";
 
 export const ProjectData = [
   {
