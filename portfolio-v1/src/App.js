@@ -16,23 +16,22 @@ import { ProjectData } from "./data/ProjectData";
 function App() {
   const body = document.querySelector("body");
 
-  const toggleInverted = () => {
-    body.classList.toggle("inverted");
-  };
+  // DARK-MODE
+  let storedInverted = window.localStorage.getItem("inverted");
+  let storedInvertedVal = JSON.parse(storedInverted)
 
-  // DARK-MODE HANDLER:
-  const [isInverted, setInverted] = useState(false);
+  const [isInverted, setInverted] = useState(storedInvertedVal);
 
   const handleInverted = () => {
+    window.localStorage.setItem("inverted", !isInverted);
     setInverted(!isInverted);
-    toggleInverted();
+    body.classList.toggle("inverted");
   };
-
+  
+  // PROJECT DATA REVERSE
   const [projects, setProjects] = useState([]);
-
   useEffect(() => {
     setProjects(ProjectData.reverse());
-    console.log(projects)
     //eslint-disable-next-line
   }, []);
 
