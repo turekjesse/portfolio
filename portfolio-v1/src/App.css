@@ -17,6 +17,7 @@ body.inverted{
 
 .ui.menu {
   border: 0 solid transparent;
+  border-radius: 0;
   border-bottom: 1px solid rgba(44, 44, 44, 0.08) !important;
   box-shadow: none;
   position:sticky !important;
@@ -60,6 +61,7 @@ button.ui.button:focus {
 
 .ui.segment { 
   border: none;
+  border-radius: 0;
   box-shadow: none;
 }
 
