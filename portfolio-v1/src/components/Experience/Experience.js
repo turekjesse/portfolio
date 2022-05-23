@@ -62,7 +62,7 @@ const Experience = ({ useViewPortWidth, breakpoint, isInverted, Jobs, Skills }) 
         </Segment>
         {/* <Divider inverted={isInverted} className="exper-horiz-div" /> */}
         <Grid centered columns="equal" relaxed="very">
-          {Jobs.map((job, idx) => {
+          {Jobs.map((job, key) => {
             return (
               <Grid.Column
                 // style={width < breakpoint ? mobileBorder : desktopBorder}
@@ -71,12 +71,13 @@ const Experience = ({ useViewPortWidth, breakpoint, isInverted, Jobs, Skills }) 
                 tablet={8}
                 computer={5}
                 widescreen={4}
+                key={key}
               >
                 <Segment textAlign="center" inverted={isInverted}>
                   <Image
                     width="200px"
                     centered
-                    src={idx % 2 === 0 && !isInverted ? job.image_2 : job.image}
+                    src={key % 2 === 0 && !isInverted ? job.image_2 : job.image}
                   />
                   {/* <h1>{job.company}</h1> */}
                   <h3>{job.title}</h3>
@@ -99,11 +100,12 @@ const Experience = ({ useViewPortWidth, breakpoint, isInverted, Jobs, Skills }) 
       </Header>
       <Segment inverted={isInverted}>
         <div ref={sliderRef} className="keen-slider">
-          {Skills.map((skill, idx) => {
+          {Skills.map((skill, key) => {
             return (
               <div
                 style={{ textAlign: "center" }}
                 className="keen-slider__slide"
+                key={key}
               >
                 <img height="80px" alt={skill.title} src={skill.logo} />
                 <p style={{ padding: "20px" }}>{skill.title}</p>

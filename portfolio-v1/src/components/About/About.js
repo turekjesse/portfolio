@@ -27,7 +27,7 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
               <Image
                 size="big"
                 centered
-                fluid
+                // fluid
                 src="https://i.imgur.com/9l1PKOx.jpg"
               />
             </Segment>
@@ -51,7 +51,7 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
                 <Image
                   size="big"
                   centered
-                  fluid
+                  // fluid
                   src="https://i.imgur.com/gSnQ9Jo.jpg"
                 />
               </Segment>
@@ -83,7 +83,7 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
                 <Image
                   size="big"
                   centered
-                  fluid
+                  // fluid
                   src="https://i.imgur.com/ueQJKbe.jpg"
                 />
               </Segment>
@@ -94,7 +94,7 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
               <Image
                 size="large"
                 centered
-                fluid
+                // fluid
                 src="https://i.imgur.com/NgQQ7dM.jpg"
               />
             </Segment>
@@ -109,7 +109,7 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
               <Image
                 size="large"
                 centered
-                fluid
+                // fluid
                 src="https://i.imgur.com/E8Lp72A.jpg"
               />
             </Segment>
@@ -123,7 +123,7 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
                 <Image
                   size="large"
                   centered
-                  fluid
+                  // fluid
                   src="https://i.imgur.com/UbfkMpE.jpg"
                 />
               </Segment>
@@ -131,7 +131,7 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
                 <Image
                   size="large"
                   centered
-                  fluid
+                  // fluid
                   src="https://i.imgur.com/9CRF8ns.jpg"
                 />
               </Segment>
@@ -139,7 +139,7 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
           </Grid.Column>
           <Grid.Row>
             <Segment inverted={isInverted}>
-              <video width="100%" src={Surf} controls loop="true">
+              <video width="100%" autoPlay src={Surf} loop={true}>
                 Sorry, your browser doesn't support video.
               </video>
             </Segment>
