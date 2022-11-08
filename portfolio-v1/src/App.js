@@ -17,8 +17,9 @@ function App() {
   const body = document.querySelector("body");
 
   // DARK-MODE
-  let storedInverted = window.localStorage.getItem("inverted");
-  let storedInvertedVal = JSON.parse(storedInverted)
+  const storedInverted = window.localStorage.getItem("inverted");
+  const storedInvertedVal = JSON.parse(storedInverted)
+  console.log(storedInverted)
 
   const [isInverted, setInverted] = useState(storedInvertedVal);
 
@@ -27,6 +28,11 @@ function App() {
     setInverted(!isInverted);
     body.classList.toggle("inverted");
   };
+
+  useEffect(() => {
+    handleInverted()
+    //eslint-disable-next-line
+  }, [])
   
   // PROJECT DATA REVERSE
   const [projects, setProjects] = useState([]);
