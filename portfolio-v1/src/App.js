@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import MobileNav from "./components/Nav/MobileNav";
@@ -17,9 +17,8 @@ function App() {
   const body = document.querySelector("body");
 
   // DARK-MODE
-  const storedInverted = window.localStorage.getItem("inverted");
-  const storedInvertedVal = JSON.parse(storedInverted)
-  console.log(storedInverted)
+  let storedInverted = window.localStorage.getItem("inverted");
+  let storedInvertedVal = JSON.parse(storedInverted);
 
   const [isInverted, setInverted] = useState(storedInvertedVal);
 
@@ -74,65 +73,67 @@ function App() {
       ) : (
         <DesktopNav isInverted={isInverted} handleInverted={handleInverted} />
       )}
-      <Route
-        path="/"
-        exact
-        render={() => (
-          <Home2
-            breakpoint={breakpoint}
-            handleInverted={handleInverted}
-            useViewPortWidth={useViewPortWidth}
-            isInverted={isInverted}
-          />
-        )}
-      />
-      <Route
-        path="/about"
-        render={() => (
-          <About
-            breakpoint={breakpoint}
-            handleInverted={handleInverted}
-            useViewPortWidth={useViewPortWidth}
-            isInverted={isInverted}
-          />
-        )}
-      />
-      <Route
-        path="/projects"
-        render={() => (
-          <Projects
-            breakpoint={breakpoint}
-            useViewPortWidth={useViewPortWidth}
-            handleInverted={handleInverted}
-            isInverted={isInverted}
-            projects={projects}
-          />
-        )}
-      />
-      <Route
-        path="/experience"
-        render={() => (
-          <Experience
-            breakpoint={breakpoint}
-            useViewPortWidth={useViewPortWidth}
-            handleInverted={handleInverted}
-            isInverted={isInverted}
-            Jobs={Jobs}
-            Skills={Skills}
-          />
-        )}
-      />
-      <Route
-        path="/hobbies"
-        render={() => (
-          <Hobbies
-            breakpoint={breakpoint}
-            useViewPortWidth={useViewPortWidth}
-            handleInverted={handleInverted}
-            isInverted={isInverted}
-          />
-        )}
-      />
+      <Routes>
+        <Route
+          path="/"
+          
+          element={
+            <Home2
+              breakpoint={breakpoint}
+              handleInverted={handleInverted}
+              useViewPortWidth={useViewPortWidth}
+              isInverted={isInverted}
+            />
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <About
+              breakpoint={breakpoint}
+              handleInverted={handleInverted}
+              useViewPortWidth={useViewPortWidth}
+              isInverted={isInverted}
+            />
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <Projects
+              breakpoint={breakpoint}
+              useViewPortWidth={useViewPortWidth}
+              handleInverted={handleInverted}
+              isInverted={isInverted}
+              projects={projects}
+            />
+          }
+        />
+        <Route
+          path="/experience"
+          element={
+            <Experience
+              breakpoint={breakpoint}
+              useViewPortWidth={useViewPortWidth}
+              handleInverted={handleInverted}
+              isInverted={isInverted}
+              Jobs={Jobs}
+              Skills={Skills}
+            />
+          }
+        />
+        <Route
+          path="/hobbies"
+          element={
+            <Hobbies
+              breakpoint={breakpoint}
+              useViewPortWidth={useViewPortWidth}
+              handleInverted={handleInverted}
+              isInverted={isInverted}
+            />
+          }
+        />
+      </Routes>
     </>
   );
 }
