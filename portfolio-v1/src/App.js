@@ -28,6 +28,11 @@ function App() {
     body.classList.toggle("inverted");
   };
 
+  useEffect(() => {
+    handleInverted()
+    //eslint-disable-next-line
+  }, [])
+  
   // PROJECT DATA REVERSE
   const [projects, setProjects] = useState([]);
   useEffect(() => {
