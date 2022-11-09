@@ -3,16 +3,15 @@ body {
   color: #1b1c1d;
 }
 
-body.inverted{
+body.inverted {
   background-color: #1b1c1d;
-  color:white;
+  color: white;
 }
 
-
-.menu{
-  height:50px;
-  margin-bottom:0 !important;
-  border-bottom: 1px solid rgba(255,255,255,.08) !important;
+.menu {
+  height: 50px;
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, .08) !important;
 }
 
 .ui.menu {
@@ -20,29 +19,29 @@ body.inverted{
   border-radius: 0;
   border-bottom: 1px solid rgba(44, 44, 44, 0.08) !important;
   box-shadow: none;
-  position:sticky !important;
+  position: sticky !important;
   z-index: 100 !important;
-  top:0px;
+  top: 0px;
 }
 
 .ui.inverted.menu {
   border: 0 solid transparent;
   box-shadow: none;
-  position:sticky !important;
+  position: sticky !important;
   z-index: 100 !important;
-  top:0px;
-  border-bottom: 1px solid rgba(255,255,255,.08) !important;
+  top: 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, .08) !important;
 }
 
 .ui.menu .dropdown.item .menu {
   background-color: #1b1c1d;
 }
 
-.ui.menu .ui.dropdown .menu > .item {
-  color:white !important;
+.ui.menu .ui.dropdown .menu>.item {
+  color: white !important;
 }
 
-.ui.menu .ui.dropdown .menu > .item:hover {
+.ui.menu .ui.dropdown .menu>.item:hover {
   color: white !important;
   text-shadow: 0px 0px 1px white !important;
 }
@@ -52,82 +51,82 @@ button.ui.button {
 }
 
 button.ui.button:hover {
-  background-color: rgba(0,0,0,.03);
+  background-color: rgba(0, 0, 0, .03);
 }
 
 button.ui.button:focus {
-  background-color: rgba(0,0,0,.0) !important;
+  background-color: rgba(0, 0, 0, .0) !important;
 }
 
-.ui.segment { 
+.ui.segment {
   border: none;
   border-radius: 0;
   box-shadow: none;
 }
 
 .ui.container {
-  margin:0 !important;
+  margin: 0 !important;
 }
 
 .no-margin {
-  margin:0 !important;
+  margin: 0 !important;
 }
 
 .row {
-  padding:0 !important;
+  padding: 0 !important;
 }
 
 .column {
-  padding:0 !important;
+  padding: 0 !important;
 }
 
 .grid {
-  margin:0 !important;
+  margin: 0 !important;
 }
 
 .job-segment {
-  padding-top:10px !important;
-  padding-bottom:10px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 
-.project-segment > h3 {
-  margin-top:14px;
+.project-segment>h3 {
+  margin-top: 14px;
 }
 
 .project-segment {
-  padding-left:0 !important;
-  padding-right:0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .exper-horiz-div {
-  margin-bottom:0 !important;
+  margin-bottom: 0 !important;
 }
 
 .proj-horiz-div {
-  padding-top:14px;
-  margin-bottom:0 !important;
+  padding-top: 14px;
+  margin-bottom: 0 !important;
 }
 
 div.btn-segment {
-  margin-bottom:0px !important;
-  padding-bottom:20px !important;
-  padding-top:8px !important;
+  margin-bottom: 0px !important;
+  padding-bottom: 20px !important;
+  padding-top: 8px !important;
 }
 
 small {
-  display:block;
+  display: block;
 }
 
-@media screen and (min-width: 720px){
+@media screen and (min-width: 720px) {
 
   .project-segment {
-    padding-left:1rem !important;
-    padding-right:1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
-  
-  .btn-segment{
-    margin-bottom:0 !important;
-    padding-bottom:1rem !important;
-    padding-top:2rem !important;
+
+  .btn-segment {
+    margin-bottom: 0 !important;
+    padding-bottom: 1rem !important;
+    padding-top: 2rem !important;
   }
 }
