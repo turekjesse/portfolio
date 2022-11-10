@@ -1,18 +1,23 @@
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/Context";
 import { Grid, Image, Segment, Button, Header } from "semantic-ui-react";
 
-const Projects = ({ isInverted, projects }) => {
+const Projects = ({ projects }) => {
+
+  const { darkMode } = useContext(DarkModeContext)
+
   return (
     <>
-      <Segment className="no-margin" inverted={isInverted}>
+      <Segment className="no-margin" inverted={darkMode}>
         <Header
           className="no-margin"
           textAlign="center"
-          inverted={isInverted}
+          inverted={darkMode}
           as="h1"
         >
           Projects
         </Header>
-        {/* <Divider inverted={isInverted} className="proj-horiz-div" /> */}
+        {/* <Divider inverted={darkMode} className="proj-horiz-div" /> */}
         <Grid centered columns="equal" relaxed="very">
           {projects.map((project, key) => {
             return (
@@ -26,7 +31,7 @@ const Projects = ({ isInverted, projects }) => {
                 <Segment
                   textAlign="center"
                   className="no-margin project-segment"
-                  inverted={isInverted}
+                  inverted={darkMode}
                 >
                   <Image size="large" centered src={project.image} />
                   <h3>{project.title}</h3>
@@ -42,16 +47,16 @@ const Projects = ({ isInverted, projects }) => {
                 </Segment>
                 <Segment
                   textAlign="center"
-                  inverted={isInverted}
+                  inverted={darkMode}
                   className="no-margin"
                 >
-                  <Button.Group size="medium" inverted={isInverted}>
+                  <Button.Group size="medium" inverted={darkMode}>
                     <Button
                       as="a"
                       href={project.url}
                       style={{ width: "60px" }}
                       color="grey"
-                      inverted={isInverted}
+                      inverted={darkMode}
                       icon="external"
                     />
                     <Button
@@ -59,7 +64,7 @@ const Projects = ({ isInverted, projects }) => {
                       href={project.repo_url}
                       style={{ width: "60px" }}
                       color="grey"
-                      inverted={isInverted}
+                      inverted={darkMode}
                       icon="github"
                     />
                   </Button.Group>

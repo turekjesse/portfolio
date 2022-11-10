@@ -1,8 +1,12 @@
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/Context";
 import { Reveal, Grid, Container } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
-const Home2 = ({ useViewPortWidth, breakpoint, isInverted }) => {
+const Home2 = ({ useViewPortWidth, breakpoint }) => {
+  const { darkMode } = useContext(DarkModeContext);
+
   const { width } = useViewPortWidth();
 
   const mobileBorder = {
@@ -15,13 +19,13 @@ const Home2 = ({ useViewPortWidth, breakpoint, isInverted }) => {
 
   return (
     <>
-      <Grid centered  columns={width > breakpoint ? "three" : "one"}>
+      <Grid centered columns={width > breakpoint ? "three" : "one"}>
         <Grid.Column>
           <Link to="/about">
             <Reveal animated="fade">
               <Reveal.Content visible>
                 <div
-                  className={isInverted ? "overlay inverted" : "overlay"}
+                  className={darkMode ? "overlay inverted" : "overlay"}
                   style={width < breakpoint ? mobileBorder : desktopBorder}
                 >
                   <h1>About</h1>
@@ -38,7 +42,7 @@ const Home2 = ({ useViewPortWidth, breakpoint, isInverted }) => {
             <Reveal animated="fade">
               <Reveal.Content visible>
                 <div
-                  className={isInverted ? "overlay inverted" : "overlay"}
+                  className={darkMode ? "overlay inverted" : "overlay"}
                   style={width < breakpoint ? mobileBorder : desktopBorder}
                 >
                   <h1>Projects</h1>
@@ -58,7 +62,7 @@ const Home2 = ({ useViewPortWidth, breakpoint, isInverted }) => {
             <Reveal animated="fade">
               <Reveal.Content visible>
                 <div
-                  className={isInverted ? "overlay inverted" : "overlay"}
+                  className={darkMode ? "overlay inverted" : "overlay"}
                   style={width < breakpoint ? mobileBorder : desktopBorder}
                 >
                   <h1>Experience</h1>

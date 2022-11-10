@@ -1,20 +1,20 @@
 import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/Context";
 
-const DesktopNav = ({ isInverted, handleInverted }) => {
-  const [isDisabled, setDisabled] = useState(false);
+const DesktopNav = () => {  
+  const { darkMode, handleDarkMode } = useContext(DarkModeContext);
 
   return (
     <>
-      <Menu fluid widths={10} inverted={isInverted}>
+      <Menu fluid widths={10} inverted={darkMode}>
         <Menu.Item as={Link} to="/" name="home" />
         <Menu.Item as={Link} to="/about" name="about" />
         <Menu.Item
-          icon={isInverted ? "lightbulb outline" : "lightbulb"}
-          onClick={() => {
-            setDisabled(!isDisabled);
-            handleInverted();
+          icon={darkMode ? "lightbulb outline" : "lightbulb"}          
+          onClick={() => {            
+            handleDarkMode();
           }}
         />
         <Menu.Item as={Link} to="/projects" name="projects" />
