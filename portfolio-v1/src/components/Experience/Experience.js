@@ -2,15 +2,17 @@ import { Grid, Image, Segment, Icon, Button, Header } from "semantic-ui-react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Resume2 from "../../assets/Jesse_Turek-Resume.pdf";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/Context";
 // import Resume from "../../assets/Resume-Jesse_Turek.pdf";
 
 const animation = { duration: 30000, easing: (t) => t };
 
-const Experience = ({ useViewPortWidth, breakpoint, isInverted, Jobs, Skills }) => {
+const Experience = ({ useViewPortWidth, breakpoint, Jobs, Skills }) => {
+  const { darkMode } = useContext(DarkModeContext);
+
   const { width } = useViewPortWidth();
-
   const slidesPerView = width < breakpoint ? 3 : 7;
-
   const [sliderRef] = useKeenSlider({
     loop: true,
     mode: "free",
@@ -32,35 +34,31 @@ const Experience = ({ useViewPortWidth, breakpoint, isInverted, Jobs, Skills }) 
 
   return (
     <>
-      <Segment inverted={isInverted}>
+      <Segment inverted={darkMode}>
         <Header
           className="no-margin"
           textAlign="center"
-          inverted={isInverted}
+          inverted={darkMode}
           as="h1"
         >
           Experience
         </Header>
-        <Segment
-          className="btn-segment"
-          textAlign="center"
-          inverted={isInverted}
-        >
+        <Segment className="btn-segment" textAlign="center" inverted={darkMode}>
           <Button
             as="a"
             href={Resume2}
             target="_blank"
-            // inverted={isInverted}
+            // inverted={darkMode}
             color="grey"
             icon
             labelPosition="left"
             size="big"
           >
             View Resume
-            <Icon name="file pdf outline" size="" />
+            <Icon name="file pdf outline" />
           </Button>
         </Segment>
-        {/* <Divider inverted={isInverted} className="exper-horiz-div" /> */}
+        {/* <Divider inverted={darkMode} className="exper-horiz-div" /> */}
         <Grid centered columns="equal" relaxed="very">
           {Jobs.map((job, key) => {
             return (
@@ -73,11 +71,11 @@ const Experience = ({ useViewPortWidth, breakpoint, isInverted, Jobs, Skills }) 
                 widescreen={4}
                 key={key}
               >
-                <Segment textAlign="center" inverted={isInverted}>
+                <Segment textAlign="center" inverted={darkMode}>
                   <Image
                     width="200px"
                     centered
-                    src={key % 2 === 0 && !isInverted ? job.image_2 : job.image}
+                    src={key % 2 === 0 && !darkMode ? job.image_2 : job.image}
                   />
                   {/* <h1>{job.company}</h1> */}
                   <h3>{job.title}</h3>
@@ -90,15 +88,17 @@ const Experience = ({ useViewPortWidth, breakpoint, isInverted, Jobs, Skills }) 
           })}
         </Grid>
       </Segment>
-      <Header
-        className="no-margin"
-        textAlign="center"
-        inverted={isInverted}
-        as="h1"
-      >
-        Skills
-      </Header>
-      <Segment inverted={isInverted}>
+      <Segment inverted={darkMode}>
+        <Header
+          className="no-margin"
+          textAlign="center"
+          inverted={darkMode}
+          as="h1"
+        >
+          Skills
+        </Header>
+      </Segment>
+      <Segment inverted={darkMode}>
         <div ref={sliderRef} className="keen-slider">
           {Skills.map((skill, key) => {
             return (

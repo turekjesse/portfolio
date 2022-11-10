@@ -1,9 +1,13 @@
+import { useContext } from "react";
 import { Grid, Segment, Image } from "semantic-ui-react";
 import "./About.css";
 import Surf from "../../assets/surf.mp4";
+import { DarkModeContext } from "../../context/Context";
 
-const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
+const About = ({ useViewPortWidth, breakpoint }) => {
   const { width } = useViewPortWidth();
+
+  const { darkMode } = useContext(DarkModeContext);
 
   // const mobileBorder = {
   //   borderBottom: "1px solid rgba(255,255,255,.2)",
@@ -15,7 +19,7 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
 
   return (
     <>
-      <Segment className="no-margin" inverted={isInverted}>
+      <Segment className="no-margin" inverted={darkMode}>
         <Grid centered columns="equal">
           <Grid.Column
             // style={width < breakpoint ? mobileBorder : desktopBorder}
@@ -23,7 +27,11 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
             mobile={16}
             computer={8}
           >
-            <Segment textAlign="center" className="no-margin" inverted={isInverted}>
+            <Segment
+              textAlign="center"
+              className="no-margin"
+              inverted={darkMode}
+            >
               <Image
                 size="big"
                 centered
@@ -34,10 +42,10 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
           </Grid.Column>
           <Grid.Column>
             <div className="about-container">
-              <Segment className="no-margin  about-header" inverted={isInverted}>
+              <Segment className="no-margin  about-header" inverted={darkMode}>
                 <h1>Hey, I'm Jesse</h1>
               </Segment>
-              <Segment size="large"  className="no-margin" inverted={isInverted}>
+              <Segment size="large" className="no-margin" inverted={darkMode}>
                 <p>
                   I am a Brooklyn-Based Software Engineer with 5 years of prior
                   experience in eCommerce and a life-long passion for building,
@@ -47,7 +55,11 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
                   learn to code.
                 </p>
               </Segment>
-              <Segment textAlign="center" className="no-margin" inverted={isInverted}>
+              <Segment
+                textAlign="center"
+                className="no-margin"
+                inverted={darkMode}
+              >
                 <Image
                   size="big"
                   centered
@@ -64,7 +76,7 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
             computer={8}
           >
             <div className="about-container">
-              <Segment size="large" inverted={isInverted} className="no-margin">
+              <Segment size="large" inverted={darkMode} className="no-margin">
                 <p>
                   When I'm not cracking code, you can find me outdoors surfing,
                   bikepacking, hiking, or skateboarding or in a workshop tuning
@@ -79,7 +91,11 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
                   adventures and creations.
                 </p>
               </Segment>
-              <Segment textAlign="center" className="no-margin" inverted={isInverted}>
+              <Segment
+                textAlign="center"
+                className="no-margin"
+                inverted={darkMode}
+              >
                 <Image
                   size="big"
                   centered
@@ -90,7 +106,11 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
             </div>
           </Grid.Column>
           <Grid.Column>
-            <Segment textAlign="center" className="no-margin" inverted={isInverted}>
+            <Segment
+              textAlign="center"
+              className="no-margin"
+              inverted={darkMode}
+            >
               <Image
                 size="large"
                 centered
@@ -105,7 +125,11 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
             mobile={16}
             computer={8}
           >
-            <Segment textAlign="center" className="no-margin" inverted={isInverted}>
+            <Segment
+              textAlign="center"
+              className="no-margin"
+              inverted={darkMode}
+            >
               <Image
                 size="large"
                 centered
@@ -119,7 +143,11 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
               style={width > breakpoint ? { marginTop: "3rem" } : null}
               className="about-container"
             >
-              <Segment textAlign="center" className="no-margin" inverted={isInverted}>
+              <Segment
+                textAlign="center"
+                className="no-margin"
+                inverted={darkMode}
+              >
                 <Image
                   size="large"
                   centered
@@ -127,7 +155,11 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
                   src="https://i.imgur.com/UbfkMpE.jpg"
                 />
               </Segment>
-              <Segment textAlign="center" className="no-margin" inverted={isInverted}>
+              <Segment
+                textAlign="center"
+                className="no-margin"
+                inverted={darkMode}
+              >
                 <Image
                   size="large"
                   centered
@@ -138,7 +170,7 @@ const About = ({ useViewPortWidth, breakpoint, isInverted }) => {
             </div>
           </Grid.Column>
           <Grid.Row>
-            <Segment inverted={isInverted}>
+            <Segment inverted={darkMode}>
               <video width="100%" autoPlay src={Surf} loop={true}>
                 Sorry, your browser doesn't support video.
               </video>

@@ -1,12 +1,14 @@
 import { Dropdown, Menu, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/Context";
 
-const MobileNav = ({ handleInverted, isInverted }) => {
-  const [isDisabled, setDisabled] = useState(false);
+const MobileNav = () => {  
+
+  const {darkMode, handleDarkMode} = useContext(DarkModeContext)
 
   return (
-    <Menu icon inverted={isInverted}>
+    <Menu icon inverted={darkMode}>
       <Dropdown item icon="bars" simple>
         <Dropdown.Menu>
           <Menu.Item name="home" as={Link} to="/" />
@@ -17,11 +19,10 @@ const MobileNav = ({ handleInverted, isInverted }) => {
       </Dropdown>
       <Menu.Item
         onClick={() => {
-          setDisabled(!isDisabled);
-          handleInverted();
+          handleDarkMode();
         }}
       >
-        <Icon name={isInverted ? "lightbulb outline" : "lightbulb"} />
+        <Icon name={darkMode ? "lightbulb outline" : "lightbulb"} />
       </Menu.Item>
     </Menu>
   );

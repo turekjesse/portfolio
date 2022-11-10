@@ -1,9 +1,10 @@
-body {
+.wrapper {
   background-color: white;
   color: #1b1c1d;
+  min-height: 100vh;
 }
 
-body.inverted {
+.wrapper.inverted {
   background-color: #1b1c1d;
   color: white;
 }

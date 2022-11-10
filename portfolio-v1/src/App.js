@@ -8,31 +8,13 @@ import About from "./components/About/About";
 import Experience from "./components/Experience/Experience";
 import { Jobs, Skills } from "./data/ExperienceData";
 import Hobbies from "./components/Hobbies/Hobbies";
-// import Home from './components/Home/Home';
 import Home2 from "./components/Home/Home2";
 import Projects from "./components/Projects/Projects";
 import { ProjectData } from "./data/ProjectData";
+import { DarkModeProvider } from "./context/Context";
+import Wrapper from "./components/Wrapper/Wrapper";
 
 function App() {
-  const body = document.querySelector("body");
-
-  // DARK-MODE
-  let storedInverted = window.localStorage.getItem("inverted");
-  let storedInvertedVal = JSON.parse(storedInverted);
-
-  const [isInverted, setInverted] = useState(storedInvertedVal);
-
-  const handleInverted = () => {
-    window.localStorage.setItem("inverted", !isInverted);
-    setInverted(!isInverted);
-    body.classList.toggle("inverted");
-  };
-
-  useEffect(() => {
-    handleInverted()
-    //eslint-disable-next-line
-  }, [])
-  
   // PROJECT DATA REVERSE
   const [projects, setProjects] = useState([]);
   useEffect(() => {
@@ -68,72 +50,61 @@ function App() {
 
   return (
     <>
-      {width < breakpoint ? (
-        <MobileNav isInverted={isInverted} handleInverted={handleInverted} />
-      ) : (
-        <DesktopNav isInverted={isInverted} handleInverted={handleInverted} />
-      )}
-      <Routes>
-        <Route
-          path="/"
-          
-          element={
-            <Home2
-              breakpoint={breakpoint}
-              handleInverted={handleInverted}
-              useViewPortWidth={useViewPortWidth}
-              isInverted={isInverted}
+      <DarkModeProvider>
+        <Wrapper>
+          {width < breakpoint ? <MobileNav /> : <DesktopNav />}
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Home2
+                  breakpoint={breakpoint}
+                  useViewPortWidth={useViewPortWidth}
+                />
+              }
             />
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <About
-              breakpoint={breakpoint}
-              handleInverted={handleInverted}
-              useViewPortWidth={useViewPortWidth}
-              isInverted={isInverted}
+            <Route
+              path="/about"
+              element={
+                <About
+                  breakpoint={breakpoint}
+                  useViewPortWidth={useViewPortWidth}
+                />
+              }
             />
-          }
-        />
-        <Route
-          path="/projects"
-          element={
-            <Projects
-              breakpoint={breakpoint}
-              useViewPortWidth={useViewPortWidth}
-              handleInverted={handleInverted}
-              isInverted={isInverted}
-              projects={projects}
+            <Route
+              path="/projects"
+              element={
+                <Projects
+                  breakpoint={breakpoint}
+                  useViewPortWidth={useViewPortWidth}
+                  projects={projects}
+                />
+              }
             />
-          }
-        />
-        <Route
-          path="/experience"
-          element={
-            <Experience
-              breakpoint={breakpoint}
-              useViewPortWidth={useViewPortWidth}
-              handleInverted={handleInverted}
-              isInverted={isInverted}
-              Jobs={Jobs}
-              Skills={Skills}
+            <Route
+              path="/experience"
+              element={
+                <Experience
+                  breakpoint={breakpoint}
+                  useViewPortWidth={useViewPortWidth}
+                  Jobs={Jobs}
+                  Skills={Skills}
+                />
+              }
             />
-          }
-        />
-        <Route
-          path="/hobbies"
-          element={
-            <Hobbies
-              breakpoint={breakpoint}
-              useViewPortWidth={useViewPortWidth}
-              handleInverted={handleInverted}
-              isInverted={isInverted}
+            <Route
+              path="/hobbies"
+              element={
+                <Hobbies
+                  breakpoint={breakpoint}
+                  useViewPortWidth={useViewPortWidth}
+                />
+              }
             />
-          }
-        />
-      </Routes>
+          </Routes>
+        </Wrapper>
+      </DarkModeProvider>
     </>
   );
 }
