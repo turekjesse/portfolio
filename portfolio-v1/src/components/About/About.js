@@ -19,7 +19,7 @@ const About = ({ useViewPortWidth, breakpoint }) => {
 
   return (
     <>
-      <Segment className="no-margin" inverted={darkMode}>
+      <Segment className="no-margin" style={{maxWidth: "1600px", margin: "0 auto"}} inverted={darkMode}>
         <Grid centered columns="equal">
           <Grid.Column
             // style={width < breakpoint ? mobileBorder : desktopBorder}
@@ -171,7 +171,7 @@ const About = ({ useViewPortWidth, breakpoint }) => {
           </Grid.Column>
           <Grid.Row>
             <Segment inverted={darkMode}>
-              <video width="100%" autoPlay src={Surf} loop={true}>
+              <video width="100%" autoPlay playsInline src={Surf} loop={true}>
                 Sorry, your browser doesn't support video.
               </video>
             </Segment>
