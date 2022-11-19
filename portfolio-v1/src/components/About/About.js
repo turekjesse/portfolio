@@ -19,7 +19,7 @@ const About = ({ useViewPortWidth, breakpoint }) => {
 
   return (
     <>
-      <Segment className="no-margin" style={{maxWidth: "1600px", margin: "0 auto"}} inverted={darkMode}>
+      <Segment style={{maxWidth: "1600px", margin: "0 auto"}} inverted={darkMode}>
         <Grid centered columns="equal">
           <Grid.Column
             // style={width < breakpoint ? mobileBorder : desktopBorder}
