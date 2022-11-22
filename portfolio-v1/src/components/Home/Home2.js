@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { DarkModeContext } from "../../context/Context";
 import { Reveal, Grid, Container } from "semantic-ui-react";
 import { Link } from "react-router-dom";
@@ -16,6 +16,17 @@ const Home2 = ({ useViewPortWidth, breakpoint }) => {
   const desktopBorder = {
     borderRight: "1px solid rgba(255,255,255,.1)",
   };
+  
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      // get innerHeight, convert to VH%
+      let vh = window.innerHeight * 0.01
+      // set VH css var
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    })
+  }, [])
+
+
 
   return (
     <>
