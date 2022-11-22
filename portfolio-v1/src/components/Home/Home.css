@@ -21,7 +21,8 @@
 }
 
 .hidden-image {
-  height: calc(33vh - 14px);
+  min-height: calc(33vh - 14px);
+  height: -webkit-fill-available;
 }
 
 
@@ -30,7 +31,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(33vh - 14px);
+  min-height: calc(33vh - 14px);
+  height: -webkit-fill-available;
   color: black;
   width: 100vw;
   background-color: rgba(227, 227, 227, 0.9);
