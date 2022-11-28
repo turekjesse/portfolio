@@ -75,7 +75,7 @@ const Experience = ({ useViewPortWidth, breakpoint, Jobs, Skills }) => {
                   <Image
                     width="200px"
                     centered
-                    src={key % 2 === 0 && !darkMode ? job.image_2 : job.image}
+                    src={!darkMode ? job.image_2 : job.image}
                   />
                   {/* <h1>{job.company}</h1> */}
                   <h3>{job.title}</h3>
