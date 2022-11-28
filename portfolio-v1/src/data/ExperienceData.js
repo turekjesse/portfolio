@@ -44,7 +44,7 @@ export const Jobs = [
   },
   {
     company: "Pieces Home",
-    title: "Freelance Ecom Manager / Developer",
+    title: "Freelance Developer / Ecom Assoc.",
     timeline: "10 / 2021 - Present",
     image: `${pieces_white}`,
     image_2: `${pieces_black}`,
