@@ -1,5 +1,7 @@
 import persado_logo_white from "../assets/persado_logo_white.png";
 import persado_logo_black from "../assets/persado-logo-black.png";
+import pieces_black from "../assets/pieces_black.png";
+import pieces_white from "../assets/pieces_white.png";
 import GA_Logo2 from "../assets/GA_Logo2.png";
 import carhartt_wip_text_logo_white from "../assets/carhartt_wip_text_logo-white.png";
 import carhartt_wip_text_logo_black from "../assets/carhartt_wip_text_logo.png";
@@ -24,6 +26,7 @@ import react from "../assets/Skills/react.png";
 import semanticuireact from "../assets/Skills/semanticuireact.png";
 import shopify from "../assets/Skills/shopify.png";
 import sketch from "../assets/Skills/sketch.png";
+import liquid from "../assets/Skills/liquid.png"
 
 
 
@@ -37,16 +40,29 @@ export const Jobs = [
     description:
       "Assigned to Persado's most demanding and valuable account within the retail vertical. Built and delivered multi-variant marketing campaign assets and/or web experiences using a variety of design tools and technologies. Identified oportunities to streamline and automate internal processes to improve efficiency within tight SLAs and timelines.",
     skills: "HTML, CSS, JavaSript, Python, Excel, Photoshop, Sketch, Adobe XD",
+    link: "https://www.persado.com/"
+  },
+  {
+    company: "Pieces Home",
+    title: "Freelance Ecom Manager / Developer",
+    timeline: "10 / 2021 - Present",
+    image: `${pieces_white}`,
+    image_2: `${pieces_black}`,
+    description:
+      "Migrated theme for compatability with Online Store 2.0. Established development workflow using Shopify CLI + Git + GitHub. Develop new and existing theme templates for desired business needs. Integrate storefront with third-party Apps and APIs. Write intenal documentation outlining theme customizations + standard operating procedures.",
+    skills: "Liquid, Shopify, Git, Klavyio, HTML, CSS, Javascript",
+    link: "https://pieceshome.com/"
   },
   {
     company: "General Assembly",
     title: "Software Engineering Immersive",
     timeline: "5 / 2021 - 8 / 2021",
     image: `${GA_Logo2}`,
-    image_2: ``,
+    image_2: `${GA_Logo2}`,
     description:
       "Engaged in a 12 week, 500+ hour, remote software engineering immersive course while learning programming and computer science fundamentals in regards to full-stack development. Worked collaboratively in an agile development workflow using industry-standard version control tools. ",
-    skills: "HTML, CSS, JavaSript, MERN",
+    skills: "HTML, CSS, JavaSript, MERN, Git",
+    link: "https://generalassemb.ly/education/software-engineering-immersive/new-york-city"
   },
   {
     company: "Carhartt WIP",
@@ -57,16 +73,18 @@ export const Jobs = [
     description:
       "Managed product data for 1000+ SKUs per season. Executed weekly site-wide content updates to align with sales-performance and marketing initiatives. Arranged and built biweekly newsletter campaigns utilizing Sketch and Mailchimp ESP. Coordinated feature deployments with external dev team.",
     skills: "Shopify, Mailchimp, Excel, Sketch, Photoshop, Amplience CMS",
+    link: "https://us.carhartt-wip.com/"
   },
   {
     company: "Unis New York",
     title: "Ecommerce Manager",
     timeline: "6 / 2015 - 12 / 2017",
     image: `${Unis}`,
-    image_2: ``,
+    image_2: `${Unis}`,
     description:
       "Owned all Ecommerce business operations including, but not limited to: order fulfillment, customer service, merchandising, SEO, and photo production.",
     skills: "Shopify, Lightspeed, Mailchimp, Excel, Photoshop",
+    link: "https://www.unisnewyork.com/"
   },
 ];
 
@@ -100,6 +118,14 @@ export const Skills = [
     logo: reactnative,
   },
   {
+    title: "Shopify",
+    logo: shopify,
+  },
+  {
+    title: "Liquid",
+    logo: liquid,
+  },
+  {
     title: "Bootstrap",
     logo: bootstrap ,
   },
@@ -128,10 +154,6 @@ export const Skills = [
     logo: postgresql,
   },
   {
-    title: "Shopify",
-    logo: shopify,
-  },
-  {
     title: "Mailchimp",
     logo: mailchimp,
   },
@@ -150,5 +172,5 @@ export const Skills = [
   {
     title: "Adobe Photoshop",
     logo: adobephotoshop,
-  },
+  }
 ];
