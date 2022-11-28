@@ -72,12 +72,19 @@ const Experience = ({ useViewPortWidth, breakpoint, Jobs, Skills }) => {
                 key={key}
               >
                 <Segment textAlign="center" inverted={darkMode}>
-                  <Image
-                    width="200px"
-                    centered
-                    src={!darkMode ? job.image_2 : job.image}
-                  />
+
+                  {/* <a href={job.link} target="blank"> */}
+                    <Image
+                      width="200px"
+                      centered
+                      src={!darkMode ? job.image_2 : job.image}
+                      alt={`${job.company} Logo`}
+                    />
+                  {/* </a> */}
                   {/* <h1>{job.company}</h1> */}
+                  {/* <small>
+                    <a href={job.link}>{job.company}</a>
+                  </small> */}
                   <h3>{job.title}</h3>
                   <h5>{job.timeline}</h5>
                   <p style={{ textAlign: "left" }}>{job.description}</p>
