@@ -9,20 +9,11 @@ const About = ({ useViewPortWidth, breakpoint }) => {
 
   const { darkMode } = useContext(DarkModeContext);
 
-  // const mobileBorder = {
-  //   borderBottom: "1px solid rgba(255,255,255,.2)",
-  // };
-
-  // const desktopBorder = {
-  //   borderRight: "1px solid rgba(255,255,255,.2)",
-  // };
-
   return (
     <>
       <Segment style={{maxWidth: "1600px", margin: "0 auto"}} inverted={darkMode}>
         <Grid centered columns="equal">
-          <Grid.Column
-            // style={width < breakpoint ? mobileBorder : desktopBorder}
+          <Grid.Column            
             className="about-segment"
             mobile={16}
             computer={8}
@@ -69,8 +60,7 @@ const About = ({ useViewPortWidth, breakpoint }) => {
               </Segment>
             </div>
           </Grid.Column>
-          <Grid.Column
-            // style={width < breakpoint ? mobileBorder : desktopBorder}
+          <Grid.Column            
             className="about-segment"
             mobile={16}
             computer={8}
@@ -119,8 +109,7 @@ const About = ({ useViewPortWidth, breakpoint }) => {
               />
             </Segment>
           </Grid.Column>
-          <Grid.Column
-            // style={width < breakpoint ? mobileBorder : desktopBorder}
+          <Grid.Column            
             className="about-segment"
             mobile={16}
             computer={8}
