@@ -4,7 +4,6 @@ import "keen-slider/keen-slider.min.css";
 import Resume2 from "../../assets/Jesse_Turek-Resume.pdf";
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/Context";
-// import Resume from "../../assets/Resume-Jesse_Turek.pdf";
 
 const animation = { duration: 30000, easing: (t) => t };
 
@@ -47,8 +46,7 @@ const Experience = ({ useViewPortWidth, breakpoint, Jobs, Skills }) => {
           <Button
             as="a"
             href={Resume2}
-            target="_blank"
-            // inverted={darkMode}
+            target="_blank"            
             color="grey"
             icon
             labelPosition="left"
@@ -58,12 +56,11 @@ const Experience = ({ useViewPortWidth, breakpoint, Jobs, Skills }) => {
             <Icon name="file pdf outline" />
           </Button>
         </Segment>
-        {/* <Divider inverted={darkMode} className="exper-horiz-div" /> */}
+
         <Grid centered columns="equal" relaxed="very">
           {Jobs.map((job, key) => {
             return (
               <Grid.Column
-                // style={width < breakpoint ? mobileBorder : desktopBorder}
                 className="job-segment"
                 mobile={16}
                 tablet={8}
@@ -72,19 +69,12 @@ const Experience = ({ useViewPortWidth, breakpoint, Jobs, Skills }) => {
                 key={key}
               >
                 <Segment textAlign="center" inverted={darkMode}>
-
-                  {/* <a href={job.link} target="blank"> */}
-                    <Image
-                      width="200px"
-                      centered
-                      src={!darkMode ? job.image_2 : job.image}
-                      alt={`${job.company} Logo`}
-                    />
-                  {/* </a> */}
-                  {/* <h1>{job.company}</h1> */}
-                  {/* <small>
-                    <a href={job.link}>{job.company}</a>
-                  </small> */}
+                  <Image
+                    width="200px"
+                    centered
+                    src={!darkMode ? job.image_2 : job.image}
+                    alt={`${job.company} Logo`}
+                  />
                   <h3>{job.title}</h3>
                   <h5>{job.timeline}</h5>
                   <p style={{ textAlign: "left" }}>{job.description}</p>

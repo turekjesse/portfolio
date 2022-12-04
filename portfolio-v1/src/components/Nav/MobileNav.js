@@ -8,7 +8,7 @@ const MobileNav = () => {
   const {darkMode, handleDarkMode} = useContext(DarkModeContext)
 
   return (
-    <Menu icon inverted={darkMode}>
+    <Menu id="menu" icon inverted={darkMode}>
       <Dropdown item icon="bars" simple>
         <Dropdown.Menu>
           <Menu.Item name="home" as={Link} to="/" />
