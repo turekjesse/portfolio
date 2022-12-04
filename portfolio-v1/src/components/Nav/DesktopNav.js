@@ -9,16 +9,17 @@ const DesktopNav = () => {
   return (
     <>
       <Menu fluid widths={10} inverted={darkMode}>
-        <Menu.Item as={Link} to="/" name="home" />
-        <Menu.Item as={Link} to="/about" name="about" />
+        <Menu.Item id="one" as={Link} to="/" name="home" />
+        <Menu.Item id="two" as={Link} to="/about" name="about" />
         <Menu.Item
+          id="three"
           icon={darkMode ? "lightbulb outline" : "lightbulb"}          
           onClick={() => {            
             handleDarkMode();
           }}
         />
-        <Menu.Item as={Link} to="/projects" name="projects" />
-        <Menu.Item as={Link} to="/experience" name="experience" />
+        <Menu.Item id="four" as={Link} to="/projects" name="projects" />
+        <Menu.Item id="five" as={Link} to="/experience" name="experience" />
       </Menu>
     </>
   );
